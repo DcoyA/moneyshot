@@ -649,6 +649,7 @@
       </div>
     </section>
 
+
     <!-- Problem Section -->
     <section id="problem">
       <div class="container">
@@ -687,38 +688,6 @@
       </div>
     </section>
 
-      <!-- SHORTS ROLLING BANNER -->
-      <section id="shorts-banner" class="shorts">
-        <div class="container">
-          <div class="shorts__head">
-            <div>
-              <div class="pill">
-                <span class="pill__dot" aria-hidden="true"></span>
-                
-              </div>
-              <h2 class="section__title" style="margin-top: 12px">이런 영상이 ‘소재’로 쌓입니다</h2>
-              <p class="section__desc" style="margin-bottom: 0">
-                
-              </p>
-            </div>
-
-            <div class="shorts__controls">
-              <button class="btn btn--ghost" type="button" data-shorts-prev="" aria-label="이전">←</button>
-              <button class="btn btn--ghost" type="button" data-shorts-next="" aria-label="다음">→</button>
-            </div>
-          </div>
-
-          <div class="shorts__frame" data-shorts-frame="">
-            <div class="shorts__track" data-shorts-track="" aria-label="https://billo.app/wp-content/uploads/2025/04/8-Health_Wellness_169096_Andrew_Michigan_4.94.mp4">
-              <!-- JS가 카드 생성/복제해서 채움 -->
-            </div>
-          </div>
-
-          <div class="shorts__hint">
-            팁: 유튜브 링크를 넣으면 썸네일이 자동으로 잡힙니다. 다른 플랫폼은 thumbnail 값을 같이 넣어주세요.
-          </div>
-        </div>
-      
     <!-- Solution Section -->
     <section id="solution">
       <div class="container">
@@ -753,6 +722,77 @@
         </div>
       </div>
     </section>
+
+
+
+    <!-- Problem Section -->
+<section id="shorts-banner" class="section" style="background: var(--bg); border-top: 1px solid var(--border); padding: 80px 0;">
+  <div class="container">
+    <div class="section__header" style="text-align: center; margin-bottom: 40px;">
+      <div class="pill" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 100px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); font-size: 14px; color: var(--muted); margin-bottom: 16px;">
+        <span class="pill__dot" style="width: 8px; height: 8px; border-radius: 50%; background: var(--brand);"></span>
+        실제 제작 예시
+      </div>
+      <h2 class="section__title" style="font-size: 32px; font-weight: 800; color: white; margin-bottom: 16px;">이런 영상이 ‘소재’로 쌓입니다</h2>
+      <p class="section__desc" style="font-size: 17px; color: var(--muted);">
+        실제 크리에이터가 촬영하고 AI가 편집한 <b>전환율 최적화</b> 영상들입니다.
+      </p>
+    </div>
+
+    <div class="shorts-container" style="position: relative; padding: 0 10px;">
+      <div id="shortsViewport" style="overflow: hidden; width: 100%; border-radius: 20px;">
+        <div id="shortsTrack" style="display: flex; gap: 20px; transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);">
+          
+          <div class="shorts-item" style="flex: 0 0 240px;">
+  		<a href="https://billo.app/wp-content/uploads/2025/04/8-Health_Wellness_169096_Andrew_Michigan_4.94.mp4" target="_blank" class="shorts-card-link" style="display: block; position: relative; aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: #111;">
+    		<video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+     			 <source src="https://billo.app/wp-content/uploads/2025/04/8-Health_Wellness_169096_Andrew_Michigan_4.94.mp4" type="video/mp4">
+    		</video>
+   		 <div style="position: absolute; bottom: 20px; left: 15px; background: var(--brand); color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">헬스/웰니스</div>
+  		</a>
+	</div>
+
+	<div class="shorts-item" style="flex: 0 0 240px;">
+  <a href="https://billo.app/wp-content/uploads/2025/04/7-Health_Wellness_326618_Natalie_California_4.7.mp4" target="_blank" class="shorts-card-link" style="display: block; position: relative; aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: #111;">
+    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+      <source src="https://billo.app/wp-content/uploads/2025/04/7-Health_Wellness_326618_Natalie_California_4.7.mp4" type="video/mp4">
+    </video>
+    <div style="position: absolute; bottom: 20px; left: 15px; background: var(--brand); color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">영양/보조제</div>
+  </a>
+</div>
+
+<div class="shorts-item" style="flex: 0 0 240px;">
+  <a href="https://billo.app/wp-content/uploads/2025/04/6-Health_Wellness_260376_Taylor_Florida_4.9.mp4" target="_blank" class="shorts-card-link" style="display: block; position: relative; aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: #111;">
+    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+      <source src="https://billo.app/wp-content/uploads/2025/04/6-Health_Wellness_260376_Taylor_Florida_4.9.mp4" type="video/mp4">
+    </video>
+    <div style="position: absolute; bottom: 20px; left: 15px; background: var(--brand); color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">라이프스타일</div>
+  </a>
+</div>
+
+<div class="shorts-item" style="flex: 0 0 240px;">
+  <a href="https://billo.app/wp-content/uploads/2025/04/5-Health_Wellness_111465_Alexis_California_4.93.mp4" target="_blank" class="shorts-card-link" style="display: block; position: relative; aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: #111;">
+    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+      <source src="https://billo.app/wp-content/uploads/2025/04/5-Health_Wellness_111465_Alexis_California_4.93.mp4" type="video/mp4">
+    </video>
+    <div style="position: absolute; bottom: 20px; left: 15px; background: var(--brand); color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">패션/가전</div>
+  </a>
+</div>
+
+
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="slideShorts(-1)" class="btn btn--ghost" style="position: absolute; left: -25px; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center; z-index: 10; background: rgba(11, 17, 32, 0.8); border-color: var(--border); backdrop-filter: blur(4px);">←</button>
+      <button onclick="slideShorts(1)" class="btn btn--ghost" style="position: absolute; right: -25px; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center; z-index: 10; background: rgba(11, 17, 32, 0.8); border-color: var(--border); backdrop-filter: blur(4px);">→</button>
+      </div>
+  </div>
+</section>
+
+
+
 
     <!-- Features Section -->
     <section id="features">
@@ -950,5 +990,20 @@
       </div>
     </footer>
   
+<script>
+  let currentPos = 0;
+  function moveShorts(dir) {
+    const track = document.getElementById('shortsTrack');
+    const itemWidth = 260; // 카드 너비(240) + 간격(20)
+    const maxScroll = track.scrollWidth - track.parentElement.offsetWidth;
+
+    currentPos += (dir * itemWidth);
+
+    if (currentPos < 0) currentPos = 0;
+    if (currentPos > maxScroll) currentPos = maxScroll;
+
+    track.style.transform = `translateX(-${currentPos}px)`;
+  }
+</script>
 
 </body></html>
