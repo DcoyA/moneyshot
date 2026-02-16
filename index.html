@@ -374,9 +374,9 @@
         color: var(--muted);
       }
 
-<section id="shorts-banner" class="section">
+<section id="shorts-banner" class="section" style="background: var(--bg); border-top: 1px solid var(--border);">
   <div class="container">
-    <div class="section__header">
+    <div class="section__header" style="text-align: center;">
       <div class="pill">
         <span class="pill__dot"></span>
         실제 제작 예시
@@ -387,48 +387,44 @@
       </p>
     </div>
 
-    <div class="shorts-container">
-      <div class="shorts__viewport" id="shortsViewport">
-        <div class="shorts__track" id="shortsTrack">
-          <div class="shorts__item">
-            <a href="영상주소1" target="_blank" class="shorts__card">
-              <div class="shorts__overlay">
-                <span class="shorts__category">뷰티/코스메틱</span>
-              </div>
-              <img src="https://via.placeholder.com/360x640/111/fff?text=Sample+1" alt="UGC 1">
+    <div class="shorts-container" style="position: relative; margin-top: 50px; padding: 0 40px;">
+      <div id="shortsViewport" style="overflow: hidden; width: 100%;">
+        <div id="shortsTrack" style="display: flex; gap: 20px; transition: transform 0.5s ease-out;">
+          <div class="shorts-item" style="flex: 0 0 240px;">
+            <a href="#" target="_blank" class="shorts-card-link" style="display: block; position: relative; aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: #111;">
+              <img src="https://via.placeholder.com/360x640/111/fff?text=Beauty+Review" alt="UGC 1" style="width: 100%; height: 100%; object-fit: cover;">
+              <div style="position: absolute; bottom: 20px; left: 15px; background: var(--brand); color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">뷰티/코스메틱</div>
             </a>
           </div>
-          <div class="shorts__item">
-            <a href="영상주소2" target="_blank" class="shorts__card">
-              <div class="shorts__overlay">
-                <span class="shorts__category">맛집/F&B</span>
-              </div>
-              <img src="https://via.placeholder.com/360x640/111/fff?text=Sample+2" alt="UGC 2">
+          <div class="shorts-item" style="flex: 0 0 240px;">
+            <a href="#" target="_blank" class="shorts-card-link" style="display: block; position: relative; aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: #111;">
+              <img src="https://via.placeholder.com/360x640/111/fff?text=Food+Review" alt="UGC 2" style="width: 100%; height: 100%; object-fit: cover;">
+              <div style="position: absolute; bottom: 20px; left: 15px; background: var(--brand); color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">맛집/F&B</div>
             </a>
           </div>
-          <div class="shorts__item">
-            <a href="영상주소3" target="_blank" class="shorts__card">
-              <div class="shorts__overlay">
-                <span class="shorts__category">패션/잡화</span>
-              </div>
-              <img src="https://via.placeholder.com/360x640/111/fff?text=Sample+3" alt="UGC 3">
+          <div class="shorts-item" style="flex: 0 0 240px;">
+            <a href="#" target="_blank" class="shorts-card-link" style="display: block; position: relative; aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: #111;">
+              <img src="https://via.placeholder.com/360x640/111/fff?text=Fashion+UGC" alt="UGC 3" style="width: 100%; height: 100%; object-fit: cover;">
+              <div style="position: absolute; bottom: 20px; left: 15px; background: var(--brand); color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">패션/잡화</div>
             </a>
           </div>
-          <div class="shorts__item">
-            <a href="영상주소4" target="_blank" class="shorts__card">
-              <div class="shorts__overlay">
-                <span class="shorts__category">IT/가전</span>
-              </div>
-              <img src="https://via.placeholder.com/360x640/111/fff?text=Sample+4" alt="UGC 4">
+          <div class="shorts-item" style="flex: 0 0 240px;">
+            <a href="#" target="_blank" class="shorts-card-link" style="display: block; position: relative; aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: #111;">
+              <img src="https://via.placeholder.com/360x640/111/fff?text=IT+Review" alt="UGC 4" style="width: 100%; height: 100%; object-fit: cover;">
+              <div style="position: absolute; bottom: 20px; left: 15px; background: var(--brand); color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">가전/IT</div>
+            </a>
+          </div>
+          <div class="shorts-item" style="flex: 0 0 240px;">
+            <a href="#" target="_blank" class="shorts-card-link" style="display: block; position: relative; aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: #111;">
+              <img src="https://via.placeholder.com/360x640/111/fff?text=Vlog+Style" alt="UGC 5" style="width: 100%; height: 100%; object-fit: cover;">
+              <div style="position: absolute; bottom: 20px; left: 15px; background: var(--brand); color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">라이프스타일</div>
             </a>
           </div>
         </div>
       </div>
 
-      <div class="shorts__controls">
-        <button class="btn btn--ghost shorts__btn--prev" type="button" onclick="moveSlider(-1)">←</button>
-        <button class="btn btn--ghost shorts__btn--next" type="button" onclick="moveSlider(1)">→</button>
-      </div>
+      <button onclick="slideShorts(-1)" class="btn btn--ghost" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center; z-index: 10;">←</button>
+      <button onclick="slideShorts(1)" class="btn btn--ghost" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center; z-index: 10;">→</button>
     </div>
   </div>
 </section>
@@ -977,5 +973,29 @@
       </div>
     </footer>
   
+<script>
+  let currentOffset = 0;
+  function slideShorts(dir) {
+    const track = document.getElementById('shortsTrack');
+    const viewport = document.getElementById('shortsViewport');
+    const itemWidth = 260; // 카드 너비(240) + gap(20)
+    const visibleWidth = viewport.offsetWidth;
+    const maxScroll = track.scrollWidth - visibleWidth;
 
+    currentOffset += (dir * itemWidth);
+
+    // 경계값 체크
+    if (currentOffset < 0) currentOffset = 0;
+    if (currentOffset > maxScroll) currentOffset = maxScroll;
+
+    track.style.transform = `translateX(-${currentOffset}px)`;
+  }
+  
+  // 브라우저 리사이즈 시 초기화 (선택사항)
+  window.addEventListener('resize', () => {
+    currentOffset = 0;
+    document.getElementById('shortsTrack').style.transform = 'translateX(0)';
+  });
+</script>
+      
 </body></html>
