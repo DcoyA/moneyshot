@@ -8,161 +8,91 @@
 
     <style>
       :root {
-        --bg: #070a12;
-        --surface: rgba(255, 255, 255, 0.06);
-        --surface2: rgba(255, 255, 255, 0.1);
-        --border: rgba(255, 255, 255, 0.12);
+        --bg: #0b1120;
+        --surface: rgba(255, 255, 255, 0.03);
+        --surface-hover: rgba(255, 255, 255, 0.06);
+        --border: rgba(255, 255, 255, 0.08);
         --text: rgba(255, 255, 255, 0.92);
-        --muted: rgba(255, 255, 255, 0.68);
-        --muted2: rgba(255, 255, 255, 0.54);
+        --muted: rgba(255, 255, 255, 0.65);
+        --muted2: rgba(255, 255, 255, 0.45);
         --brand: #4f46e5; /* indigo */
-        --brand2: #22c55e; /* green */
-        --warn: #fb7185; /* rose */
-        --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
-        --radius: 18px;
-        --radius2: 14px;
-        --max: 1100px;
+        --brand-glow: rgba(79, 70, 229, 0.35);
+        --accent: #22c55e; /* green */
+        --accent-glow: rgba(34, 197, 94, 0.25);
+        --shadow: 0 20px 80px -10px rgba(0, 0, 0, 0.6);
+        --radius: 20px;
+        --radius-sm: 12px;
+        --max-w: 1080px;
+        --font-main:
+          -apple-system, BlinkMacSystemFont, 'Pretendard Variable', Pretendard, system-ui, Roboto, 'Helvetica Neue',
+          'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
       }
 
-      * {
+      *,
+      *::before,
+      *::after {
         box-sizing: border-box;
       }
+
       html {
         scroll-behavior: smooth;
       }
+
       body {
         margin: 0;
-        font-family:
-          ui-sans-serif,
-          system-ui,
-          -apple-system,
-          Segoe UI,
-          Roboto,
-          'Apple SD Gothic Neo',
-          'Noto Sans KR',
-          Arial,
-          sans-serif;
-        background:
-          radial-gradient(1200px 800px at 20% -10%, rgba(79, 70, 229, 0.35), transparent 55%),
-          radial-gradient(900px 700px at 90% 10%, rgba(34, 197, 94, 0.18), transparent 55%),
-          radial-gradient(800px 700px at 50% 100%, rgba(251, 113, 133, 0.14), transparent 55%), var(--bg);
+        font-family: var(--font-main);
+        background-color: var(--bg);
+        background-image:
+          radial-gradient(circle at 15% 0%, rgba(79, 70, 229, 0.15) 0%, transparent 40%),
+          radial-gradient(circle at 85% 100%, rgba(34, 197, 94, 0.1) 0%, transparent 40%);
         color: var(--text);
-        letter-spacing: -0.2px;
-        line-height: 1.5;
+        line-height: 1.6;
+        letter-spacing: -0.02em;
+        overflow-x: hidden;
       }
 
       a {
         color: inherit;
         text-decoration: none;
+        transition: 0.2s;
       }
-      b {
-        color: rgba(255, 255, 255, 0.94);
-      }
-      .textStrong {
-        color: rgba(255, 255, 255, 0.96);
-      }
-
-      .container {
-        max-width: var(--max);
-        margin: 0 auto;
-        padding: 0 22px;
-      }
-
-      /* NAV */
-      .nav {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        backdrop-filter: blur(10px);
-        background: rgba(7, 10, 18, 0.65);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      }
-      .nav__inner {
-        height: 64px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-      }
-      .nav__brand {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-weight: 900;
-      }
-      .logo {
-        width: 32px;
-        height: 32px;
-        border-radius: 10px;
-        background: linear-gradient(135deg, rgba(79, 70, 229, 1), rgba(34, 197, 94, 0.9));
-        box-shadow: 0 10px 25px rgba(79, 70, 229, 0.25);
-      }
-      .nav__name {
-        white-space: nowrap;
-      }
-      .nav__links {
-        display: none;
-        gap: 14px;
-        color: var(--muted);
-        font-size: 14px;
-      }
-      .nav__links a {
-        padding: 8px 6px;
-        border-radius: 10px;
-      }
-      .nav__links a:hover {
-        background: rgba(255, 255, 255, 0.06);
-        color: var(--text);
-      }
-      .nav__cta {
-        display: none;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .nav__burger {
-        width: 44px;
-        height: 44px;
-        border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        background: rgba(255, 255, 255, 0.06);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 4px;
+      button {
+        background: none;
+        border: none;
+        font: inherit;
         cursor: pointer;
+        color: inherit;
       }
-      .nav__burger span {
-        display: block;
-        width: 18px;
-        height: 2px;
-        background: rgba(255, 255, 255, 0.78);
-        border-radius: 99px;
+
+      /* Layout */
+      .container {
+        width: 100%;
+        max-width: var(--max-w);
+        margin: 0 auto;
+        padding: 0 24px;
       }
-      .nav__mobile {
-        display: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        background: rgba(7, 10, 18, 0.72);
-        backdrop-filter: blur(10px);
+
+      /* Typography */
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        line-height: 1.2;
+        font-weight: 800;
       }
-      .nav__mobileInner {
-        padding: 12px 22px 16px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+      p {
+        margin: 0;
       }
-      .nav__mobileInner a {
-        color: rgba(255, 255, 255, 0.85);
-        padding: 10px 10px;
-        border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(255, 255, 255, 0.04);
+      .text-gradient {
+        background: linear-gradient(135deg, #fff 30%, var(--brand) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
-      .nav__mobileInner a:hover {
-        background: rgba(255, 255, 255, 0.08);
+      .text-accent {
+        color: var(--accent);
       }
-      .nav__mobileBtn {
-        margin-top: 6px;
+      .text-brand {
+        color: var(--brand);
       }
 
       /* Buttons */
@@ -170,1325 +100,823 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 11px 14px;
-        border-radius: 12px;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.06);
-        color: var(--text);
-        font-weight: 800;
-        transition:
-          transform 0.15s ease,
-          background 0.15s ease,
-          border-color 0.15s ease;
-        cursor: pointer;
-        user-select: none;
+        padding: 14px 24px;
+        border-radius: var(--radius-sm);
+        font-weight: 700;
+        font-size: 16px;
+        transition: all 0.2s ease;
+        white-space: nowrap;
       }
-      .btn:hover {
-        transform: translateY(-1px);
-        background: rgba(255, 255, 255, 0.09);
-        border-color: rgba(255, 255, 255, 0.18);
+      .btn-primary {
+        background: var(--brand);
+        color: white;
+        box-shadow: 0 4px 20px rgba(79, 70, 229, 0.4);
       }
-      .btn--primary {
-        background: linear-gradient(135deg, rgba(79, 70, 229, 1), rgba(79, 70, 229, 0.72));
-        border-color: rgba(79, 70, 229, 0.45);
-        box-shadow: 0 18px 45px rgba(79, 70, 229, 0.28);
-      }
-      .btn--primary:hover {
-        background: linear-gradient(135deg, rgba(79, 70, 229, 1), rgba(34, 197, 94, 0.55));
-        border-color: rgba(34, 197, 94, 0.35);
-      }
-      .btn--ghost {
-        background: rgba(255, 255, 255, 0.06);
-      }
-      .btn--full {
-        width: 100%;
-      }
-      .btn--big {
-        padding: 12px 16px;
-        border-radius: 14px;
-        font-size: 15px;
-      }
-
-      /* HERO */
-      .hero {
-        padding: 56px 0 34px;
-      }
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 7px 12px;
-        border-radius: 999px;
-        background: rgba(79, 70, 229, 0.16);
-        border: 1px solid rgba(79, 70, 229, 0.35);
-        color: rgba(255, 255, 255, 0.88);
-        font-size: 13px;
-        font-weight: 800;
-      }
-      .pill__dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 999px;
-        background: rgba(34, 197, 94, 1);
-        box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
-      }
-      .hero__title {
-        margin: 14px 0 12px;
-        font-size: clamp(34px, 4.5vw, 56px);
-        line-height: 1.06;
-        letter-spacing: -1.2px;
-      }
-      .gradText {
-        background: linear-gradient(90deg, rgba(34, 197, 94, 1), rgba(79, 70, 229, 1));
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-      .hero__sub {
-        max-width: 760px;
-        font-size: 16.5px;
-        color: var(--muted);
-        line-height: 1.7;
-        margin: 0;
-      }
-      .hero__grid {
-        display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 18px;
-        margin-top: 26px;
-        align-items: stretch;
-      }
-      .card {
-        background: var(--surface);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-      }
-      .heroCard {
-        padding: 22px;
-        position: relative;
-        overflow: hidden;
-      }
-      .heroCard__glow {
-        position: absolute;
-        width: 520px;
-        height: 520px;
-        border-radius: 520px;
-        background: radial-gradient(circle at 30% 30%, rgba(79, 70, 229, 0.35), transparent 55%);
-        filter: blur(12px);
-        right: -220px;
-        top: -260px;
-        pointer-events: none;
-      }
-      .hero__actions {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        margin-top: 16px;
-      }
-      .chips {
-        margin-top: 16px;
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-      .chip {
-        padding: 7px 10px;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(255, 255, 255, 0.04);
-        color: var(--muted2);
-        font-size: 13.5px;
-      }
-
-      .sideCard {
-        padding: 18px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-      .sideItem {
-        padding: 14px;
-        border-radius: 14px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(255, 255, 255, 0.04);
-      }
-      .sideItem__k {
-        font-size: 13px;
-        color: var(--muted2);
-        font-weight: 800;
-      }
-      .sideItem__v {
-        margin-top: 6px;
-        font-size: 18px;
-        font-weight: 950;
-      }
-      .sideItem__d {
-        margin-top: 6px;
-        font-size: 14px;
-        color: var(--muted);
-        line-height: 1.6;
-      }
-
-      .miniGrid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-        margin-top: 6px;
-      }
-      .miniStat {
-        padding: 14px;
-        border-radius: 14px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(255, 255, 255, 0.04);
-      }
-      .miniStat__k {
-        font-size: 13px;
-        color: var(--muted2);
-        font-weight: 800;
-      }
-      .miniStat__v {
-        margin-top: 6px;
-        font-size: 18px;
-        font-weight: 950;
-      }
-      .miniStat__d {
-        margin-top: 6px;
-        font-size: 14px;
-        color: var(--muted);
-        line-height: 1.6;
-      }
-
-      /* SECTIONS */
-      .section {
-        padding: 34px 0;
-      }
-      .section__title {
-        font-size: 26px;
-        margin: 0 0 10px;
-        letter-spacing: -0.6px;
-      }
-      .section__desc {
-        margin: 0 0 18px;
-        color: var(--muted);
-        line-height: 1.7;
-        max-width: 860px;
-      }
-
-      .grid {
-        display: grid;
-        gap: 14px;
-      }
-      .grid--2 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .grid--3 {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .tile {
-        padding: 18px;
-        border-radius: var(--radius2);
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .tile--soft {
-        background: linear-gradient(180deg, rgba(34, 197, 94, 0.06), rgba(255, 255, 255, 0.05));
-        border-color: rgba(34, 197, 94, 0.16);
-      }
-      .tile__title {
-        margin: 10px 0 8px;
-        font-size: 18px;
-        font-weight: 950;
-      }
-      .tile__desc {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.7;
-      }
-
-      .badge {
-        display: inline-flex;
-        align-items: center;
-        padding: 6px 10px;
-        border-radius: 999px;
-        font-size: 12.5px;
-        font-weight: 950;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        background: rgba(255, 255, 255, 0.05);
-        color: rgba(255, 255, 255, 0.82);
-      }
-      .badge--brand {
-        border-color: rgba(79, 70, 229, 0.45);
-        background: rgba(79, 70, 229, 0.14);
-      }
-      .badge--green {
-        border-color: rgba(34, 197, 94, 0.35);
-        background: rgba(34, 197, 94, 0.12);
-      }
-      .badge--rose {
-        border-color: rgba(251, 113, 133, 0.35);
-        background: rgba(251, 113, 133, 0.12);
-      }
-
-      .callout {
-        margin-top: 14px;
-        padding: 14px 16px;
-        border-radius: 14px;
-        border: 1px solid rgba(79, 70, 229, 0.32);
-        background: rgba(79, 70, 229, 0.1);
-        line-height: 1.7;
-      }
-      .callout__title {
-        font-weight: 950;
-        letter-spacing: -0.2px;
-      }
-      .callout__body {
-        margin-top: 6px;
-        color: rgba(255, 255, 255, 0.88);
-      }
-
-      /* FEATURES */
-      .micro {
-        margin-top: 10px;
-        padding: 10px 12px;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px dashed rgba(207, 210, 255, 0.55);
-        color: rgba(255, 255, 255, 0.78);
-        font-size: 14px;
-        line-height: 1.6;
-      }
-
-      /* SHORTS ROLLING BANNER */
-      .shorts {
-        padding: 34px 0;
-      }
-      .shorts__head {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        gap: 14px;
-        flex-wrap: wrap;
-      }
-      .shorts__controls {
-        display: flex;
-        gap: 10px;
-      }
-      .shorts__frame {
-        margin-top: 18px;
-        border-radius: 18px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(255, 255, 255, 0.04);
-        overflow: hidden;
-        box-shadow: 0 18px 60px rgba(0, 0, 0, 0.3);
-        position: relative;
-      }
-      .shorts__frame:before {
-        content: '';
-        position: absolute;
-        inset: -120px -120px auto auto;
-        width: 360px;
-        height: 360px;
-        border-radius: 999px;
-        background: radial-gradient(circle at 30% 30%, rgba(79, 70, 229, 0.28), transparent 60%);
-        filter: blur(16px);
-        pointer-events: none;
-      }
-      .shorts__track {
-        display: flex;
-        gap: 12px;
-        padding: 14px;
-        will-change: transform;
-        transform: translate3d(0, 0, 0);
-      }
-      @media (min-width: 720px) {
-        .shorts__track[data-marquee='on'] {
-          animation: shorts-marquee linear infinite;
-        }
-      }
-      .shorts__track.is-paused {
-        animation-play-state: paused;
-      }
-      .shorts__card {
-        flex: 0 0 auto;
-        width: 240px;
-        height: 340px;
-        border-radius: 16px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        background: rgba(255, 255, 255, 0.05);
-        overflow: hidden;
-        position: relative;
-        cursor: pointer;
-        transition:
-          transform 0.18s ease,
-          border-color 0.18s ease,
-          background 0.18s ease,
-          box-shadow 0.18s ease;
-        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
-      }
-      .shorts__card:hover {
+      .btn-primary:hover {
+        background: #4338ca;
         transform: translateY(-2px);
-        border-color: rgba(79, 70, 229, 0.45);
-        background: rgba(255, 255, 255, 0.07);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.32);
+        box-shadow: 0 8px 30px rgba(79, 70, 229, 0.5);
       }
-      .shorts__card:focus-visible {
-        outline: 3px solid rgba(34, 197, 94, 0.55);
-        outline-offset: 3px;
+      .btn-outline {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.03);
       }
-      .shorts__thumb {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        filter: saturate(1.02) contrast(1.03);
-        transform: scale(1.02);
+      .btn-outline:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.08);
       }
-      .shorts__play {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        width: 40px;
-        height: 40px;
-        border-radius: 14px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        background: rgba(0, 0, 0, 0.35);
-        backdrop-filter: blur(6px);
+      .btn-nav {
+        font-size: 14px;
+        color: var(--muted);
+        padding: 8px 12px;
+      }
+      .btn-nav:hover {
+        color: white;
+      }
+
+      /* Navbar */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(11, 17, 32, 0.85);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        height: 64px;
         display: flex;
         align-items: center;
-        justify-content: center;
       }
-      .shorts__play:before {
-        content: '';
-        width: 0;
-        height: 0;
-        border-left: 12px solid rgba(255, 255, 255, 0.92);
-        border-top: 8px solid transparent;
-        border-bottom: 8px solid transparent;
-        margin-left: 2px;
+      .nav-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
-      .shorts__overlay {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding: 12px 12px 12px;
-        background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 58%, rgba(0, 0, 0, 0.85) 100%);
-        color: rgba(255, 255, 255, 0.92);
-      }
-      .shorts__title {
-        font-weight: 950;
-        letter-spacing: -0.3px;
-        font-size: 14.5px;
-        line-height: 1.35;
-      }
-      .shorts__meta {
-        margin-top: 6px;
-        font-size: 12.5px;
-        color: rgba(255, 255, 255, 0.7);
+      .logo {
+        font-weight: 900;
+        font-size: 18px;
         display: flex;
         align-items: center;
         gap: 8px;
       }
-      .shorts__chip {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 5px 8px;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        background: rgba(255, 255, 255, 0.06);
+      .logo-icon {
+        width: 28px;
+        height: 28px;
+        background: linear-gradient(135deg, var(--brand), var(--accent));
+        border-radius: 8px;
       }
-      .shorts__hint {
-        margin-top: 10px;
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.56);
+      .nav-menu {
+        display: none;
+        gap: 4px;
       }
-      @media (max-width: 719px) {
-        .shorts__card {
-          width: 200px;
-          height: 290px;
-        }
-      }
-      @keyframes shorts-marquee {
-        from {
-          transform: translate3d(0, 0, 0);
-        }
-        to {
-          transform: translate3d(calc(-1 * var(--marquee-distance, 800px)), 0, 0);
-        }
-      }
-      .shorts__frame--scroll {
-        overflow-x: auto;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-      }
-      .shorts__frame--scroll::-webkit-scrollbar {
+      .nav-cta {
         display: none;
       }
 
-      /* PROCESS */
-      .steps {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 12px;
+      @media (min-width: 768px) {
+        .nav-menu {
+          display: flex;
+        }
+        .nav-cta {
+          display: block;
+        }
       }
-      .step {
-        padding: 14px;
-        border-radius: 14px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(255, 255, 255, 0.04);
-        display: flex;
-        gap: 12px;
+
+      /* Section Common */
+      section {
+        padding: 80px 0;
       }
-      .step__n {
-        width: 30px;
-        height: 30px;
-        border-radius: 10px;
-        background: rgba(79, 70, 229, 0.18);
-        border: 1px solid rgba(79, 70, 229, 0.35);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 950;
+      .section-header {
+        margin-bottom: 48px;
+        text-align: left;
       }
-      .step__t {
-        font-weight: 950;
-        letter-spacing: -0.2px;
+      .section-tag {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 100px;
+        font-size: 13px;
+        font-weight: 700;
+        background: rgba(79, 70, 229, 0.1);
+        color: #818cf8;
+        border: 1px solid rgba(79, 70, 229, 0.2);
+        margin-bottom: 16px;
       }
-      .step__d {
-        margin-top: 6px;
+      .section-title {
+        font-size: 32px;
+        margin-bottom: 16px;
+      }
+      .section-desc {
+        font-size: 17px;
         color: var(--muted);
-        line-height: 1.6;
+        max-width: 600px;
+      }
+
+      /* Hero */
+      .hero {
+        padding-top: 100px;
+        padding-bottom: 80px;
+        text-align: center;
+      }
+      .hero-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        border-radius: 100px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border);
         font-size: 14px;
+        color: var(--muted);
+        margin-bottom: 24px;
       }
-
-      .note {
-        margin-top: 14px;
-        padding: 12px 14px;
-        border-radius: 14px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(255, 255, 255, 0.04);
-        color: rgba(255, 255, 255, 0.76);
-        line-height: 1.7;
+      .hero-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 10px var(--accent-glow);
       }
-
-      /* CTA CHOICE BUTTONS (New Section) */
-      .cta-choice {
+      .hero-title {
+        font-size: clamp(36px, 5vw, 64px);
+        line-height: 1.1;
+        margin-bottom: 24px;
+        letter-spacing: -0.03em;
+      }
+      .hero-sub {
+        font-size: 18px;
+        color: var(--muted);
+        max-width: 700px;
+        margin: 0 auto 40px;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        margin-bottom: 60px;
+      }
+      .hero-stats {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-        margin-top: 14px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+        max-width: 800px;
+        margin: 0 auto;
       }
-      .choice-card {
+      .stat-item {
+        background: rgba(11, 17, 32, 0.6);
+        padding: 24px;
+        text-align: center;
+      }
+      .stat-val {
+        font-size: 24px;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 4px;
+      }
+      .stat-lbl {
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      /* Problem Grid */
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      @media (min-width: 768px) {
+        .grid-2 {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 32px;
+        transition: 0.3s;
+      }
+      .card:hover {
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+
+      .prob-num {
+        font-size: 12px;
+        font-weight: 700;
+        color: #f43f5e;
+        margin-bottom: 12px;
+        display: block;
+      }
+      .card-title {
+        font-size: 20px;
+        margin-bottom: 12px;
+        color: white;
+      }
+      .card-text {
+        font-size: 15px;
+        color: var(--muted);
+      }
+
+      /* Solution */
+      .sol-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+      .sol-card {
         padding: 24px;
         border-radius: 16px;
-        text-align: center;
-        transition:
-          transform 0.2s,
-          box-shadow 0.2s;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.03), transparent);
+        border: 1px solid var(--border);
+      }
+      .sol-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: rgba(79, 70, 229, 0.1);
+        color: var(--brand);
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-        min-height: 140px;
+        margin-bottom: 16px;
+        font-size: 20px;
+      }
+
+      /* Features */
+      .feat-list {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      .feat-item {
+        display: flex;
+        gap: 24px;
+        padding: 32px;
+        border-radius: var(--radius);
+        background: var(--surface);
+        border: 1px solid var(--border);
+        align-items: flex-start;
+      }
+      .feat-num {
+        font-size: 48px;
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.05);
+        line-height: 0.8;
+      }
+      .feat-content h3 {
+        font-size: 22px;
+        margin-bottom: 8px;
+      }
+      .feat-content p {
+        color: var(--muted);
+      }
+
+      /* Process */
+      .process-steps {
+        position: relative;
+        padding-left: 20px;
+        border-left: 2px solid var(--border);
+      }
+      .step {
+        position: relative;
+        padding-left: 32px;
+        margin-bottom: 40px;
+      }
+      .step:last-child {
+        margin-bottom: 0;
+      }
+      .step::before {
+        content: '';
+        position: absolute;
+        left: -9px;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--bg);
+        border: 2px solid var(--brand);
+      }
+      .step-name {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--brand);
+        margin-bottom: 4px;
+        text-transform: uppercase;
+      }
+      .step-title {
+        font-size: 18px;
+        color: white;
+        margin-bottom: 4px;
+      }
+      .step-desc {
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      /* Pricing Replacement: CTA Choice */
+      .cta-choice-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-top: 24px;
+      }
+      @media (min-width: 768px) {
+        .cta-choice-container {
+          grid-template-columns: 1fr 1fr;
+          gap: 32px;
+        }
+      }
+      .choice-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 48px 32px;
+        border-radius: 24px;
+        border: 2px solid var(--border);
+        background: var(--surface);
+        transition: all 0.3s ease;
         cursor: pointer;
+        height: 100%;
+        text-decoration: none;
       }
       .choice-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        transform: translateY(-5px);
+        background: var(--surface-hover);
+        border-color: rgba(255, 255, 255, 0.2);
       }
-      .choice-card--indigo {
-        background: linear-gradient(135deg, rgba(79, 70, 229, 0.8), rgba(79, 70, 229, 0.5));
-        border-color: rgba(79, 70, 229, 0.5);
+
+      /* Left Card Style */
+      .choice-client {
+        border-color: rgba(79, 70, 229, 0.3);
+        background: linear-gradient(180deg, rgba(79, 70, 229, 0.05), transparent);
       }
-      .choice-card--indigo:hover {
-        background: linear-gradient(135deg, rgba(79, 70, 229, 1), rgba(79, 70, 229, 0.7));
+      .choice-client:hover {
+        border-color: rgba(79, 70, 229, 0.6);
+        box-shadow: 0 10px 40px -10px rgba(79, 70, 229, 0.2);
       }
-      .choice-card--green {
-        background: linear-gradient(135deg, rgba(34, 197, 94, 0.8), rgba(34, 197, 94, 0.5));
-        border-color: rgba(34, 197, 94, 0.5);
+      .choice-client .icon-box {
+        background: rgba(79, 70, 229, 0.1);
+        color: #818cf8;
       }
-      .choice-card--green:hover {
-        background: linear-gradient(135deg, rgba(34, 197, 94, 1), rgba(34, 197, 94, 0.7));
+
+      /* Right Card Style */
+      .choice-creator {
+        border-color: rgba(34, 197, 94, 0.3);
+        background: linear-gradient(180deg, rgba(34, 197, 94, 0.05), transparent);
       }
-      .choice-card__title {
-        font-size: 20px;
+      .choice-creator:hover {
+        border-color: rgba(34, 197, 94, 0.6);
+        box-shadow: 0 10px 40px -10px rgba(34, 197, 94, 0.2);
+      }
+      .choice-creator .icon-box {
+        background: rgba(34, 197, 94, 0.1);
+        color: #4ade80;
+      }
+
+      .choice-card .icon-box {
+        width: 64px;
+        height: 64px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        margin-bottom: 24px;
+      }
+      .choice-title {
+        font-size: 24px;
         font-weight: 800;
-        margin-bottom: 6px;
+        color: white;
+        margin-bottom: 12px;
       }
-      .choice-card__desc {
+      .choice-desc {
+        font-size: 16px;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+      .choice-btn-fake {
+        margin-top: 32px;
+        padding: 12px 24px;
+        border-radius: 100px;
         font-size: 14px;
-        color: rgba(255, 255, 255, 0.9);
-        font-weight: 500;
+        font-weight: 700;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .choice-card:hover .choice-btn-fake {
+        background: white;
+        color: black;
       }
 
       /* FAQ */
-      .faqList details {
-        border-radius: 14px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(255, 255, 255, 0.05);
-        padding: 12px 14px;
+      .faq-item {
+        border-bottom: 1px solid var(--border);
       }
-      .faqList details + details {
-        margin-top: 10px;
+      .faq-item:first-child {
+        border-top: 1px solid var(--border);
       }
-      .faqList summary {
+      details > summary {
+        padding: 24px 0;
         cursor: pointer;
+        font-weight: 700;
+        font-size: 18px;
         list-style: none;
-        font-weight: 950;
-        letter-spacing: -0.3px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
-      .faqList summary::-webkit-details-marker {
+      details > summary::-webkit-details-marker {
         display: none;
       }
-      .faqList p {
-        margin: 10px 0 0;
-        color: var(--muted);
-        line-height: 1.75;
-      }
-
-      /* APPLY / CTA */
-      .cta {
-        padding: 26px;
-        border-radius: var(--radius);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: linear-gradient(135deg, rgba(79, 70, 229, 0.22), rgba(34, 197, 94, 0.1));
-        box-shadow: var(--shadow);
-        display: flex;
-        gap: 18px;
-        align-items: flex-start;
-        justify-content: space-between;
-        flex-wrap: wrap;
-      }
-      .cta__text {
-        max-width: 720px;
-      }
-      .cta__title {
-        margin: 0;
+      details > summary::after {
+        content: '+';
         font-size: 24px;
-        letter-spacing: -0.6px;
-        line-height: 1.2;
+        font-weight: 300;
+        color: var(--muted);
       }
-      .cta__desc {
-        margin: 8px 0 0;
-        color: rgba(255, 255, 255, 0.78);
-        line-height: 1.7;
+      details[open] > summary::after {
+        content: '-';
       }
-      .cta__actions {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        min-width: 280px;
-      }
-      .cta__hint {
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.58);
+      details > p {
+        padding-bottom: 24px;
+        color: var(--muted);
+        line-height: 1.6;
       }
 
-      /* FOOTER */
-      .footer {
-        padding: 26px 0 40px;
-        color: rgba(255, 255, 255, 0.52);
-        font-size: 13.5px;
+      /* Footer */
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 60px 0;
+        text-align: center;
+        color: var(--muted2);
+        font-size: 14px;
       }
-      .footer__inner {
+      .footer-links {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-      .footer__sub {
-        color: rgba(255, 255, 255, 0.46);
+        justify-content: center;
+        gap: 24px;
+        margin-bottom: 24px;
       }
 
       /* Responsive */
-      @media (max-width: 980px) {
-        .hero__grid {
+      @media (max-width: 768px) {
+        .hero-stats {
           grid-template-columns: 1fr;
+          border: none;
+          background: none;
+          gap: 12px;
         }
-        .miniGrid {
-          grid-template-columns: 1fr;
+        .stat-item {
+          border-radius: 12px;
         }
-        .grid--2 {
-          grid-template-columns: 1fr;
+        .feat-item {
+          flex-direction: column;
+          gap: 16px;
         }
-        .grid--3 {
-          grid-template-columns: 1fr;
+        .feat-num {
+          font-size: 32px;
         }
-        .steps {
-          grid-template-columns: 1fr;
-        }
-        .nav__cta {
-          display: none;
-        }
-        .nav__links {
-          display: none;
-        }
-        .nav__burger {
-          display: inline-flex;
-        }
-        .cta-choice {
-          grid-template-columns: 1fr;
-        }
-      }
-      @media (min-width: 981px) {
-        .nav__links {
-          display: flex;
-        }
-        .nav__cta {
-          display: flex;
-        }
-        .nav__burger {
-          display: none;
+        .hero-title {
+          font-size: 36px;
         }
       }
     </style>
   </head>
-
   <body style="">
-    <!-- NAV -->
-    <header class="nav" id="top">
-      <div class="container nav__inner">
-        <a class="nav__brand" href="#top" aria-label="홈으로">
-          <span class="logo" aria-hidden="true"></span>
-          <span class="nav__name">돈되는쇼츠</span>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="#" class="logo">
+          <div class="logo-icon"></div>
+          돈되는쇼츠
         </a>
-
-        <nav class="nav__links" aria-label="섹션 바로가기">
-          <a href="#problem">문제</a>
-          <a href="#solution">해결</a>
-          <a href="#features">강점</a>
-          <a href="#shorts-banner">쇼츠 예시</a>
-          <a href="#process">프로세스</a>
-          <a href="#faq">FAQ</a>
-        </nav>
-
-        <div class="nav__cta">
-          <a class="btn btn--ghost" href="#choice">신청하기</a>
-          <a class="btn btn--primary" href="#apply">무료 상담</a>
+        <div class="nav-menu">
+          <a href="#problem" class="btn-nav">문제</a>
+          <a href="#solution" class="btn-nav">해결책</a>
+          <a href="#features" class="btn-nav">강점</a>
+          <a href="#process" class="btn-nav">프로세스</a>
+          <a href="#cta-choice" class="btn-nav">의뢰/제작</a>
+          <a href="#faq" class="btn-nav">FAQ</a>
         </div>
-
-        <button class="nav__burger" id="burger" aria-label="모바일 메뉴 열기" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-
-      <!-- Mobile menu -->
-      <div class="nav__mobile" id="mobileMenu">
-        <div class="container nav__mobileInner">
-          <a href="#problem">문제</a>
-          <a href="#solution">해결</a>
-          <a href="#features">강점</a>
-          <a href="#shorts-banner">쇼츠 예시</a>
-          <a href="#process">프로세스</a>
-          <a href="#faq">FAQ</a>
-          <a class="btn btn--primary nav__mobileBtn" href="#apply">지금 바로 무료 상담</a>
+        <div class="nav-cta">
+          <a href="#cta-choice" class="btn btn-primary btn-sm" style="padding: 8px 16px; font-size: 14px">문의하기</a>
         </div>
       </div>
-    </header>
+    </nav>
 
-    <!-- HERO -->
-    <main>
-      <section class="hero">
-        <div class="container">
-          <div class="pill">
-            <span class="pill__dot" aria-hidden="true"></span>
-            AI 기반 UGC 리뷰 영상 제작 &amp; 매칭 서비스
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-pill">
+          <span class="hero-dot"></span>
+          AI 기반 UGC 리뷰 영상 제작 &amp; 매칭
+        </div>
+        <h1 class="hero-title">
+          인플루언서 섭외했는데<br>
+          <span class="text-accent">매출은 그대로</span>였다면?
+        </h1>
+        <p class="hero-sub">
+          <b>돈되는쇼츠</b>는 사장님을 위해 <b>진짜 사람(UGC)</b>의 리뷰 영상을 제작하고,<br>
+          <b>AI 편집</b>으로 "광고에 바로 쓰이는 숏폼"을 가장 빠르게 완성합니다.
+        </p>
+        <div class="hero-actions">
+          <a href="#cta-choice" class="btn btn-primary">영상 제작 의뢰하기</a>
+          <a href="#process" class="btn btn-outline">작업 방식 보기</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-val">Zero</div>
+            <div class="stat-lbl">복잡한 섭외/조율 과정</div>
           </div>
-
-          <h1 class="hero__title">
-            인플루언서 섭외했는데<br>
-            <span class="gradText">매출은 그대로</span>였다면?
-          </h1>
-
-          <p class="hero__sub">
-            <b class="textStrong">돈되는쇼츠</b>는 음식점·스마트스토어·로컬 서비스를 위해
-            <b class="textStrong">진짜 사람(UGC)</b>의 리뷰 영상을 제작/매칭하고, <b class="textStrong">AI 편집</b>으로
-            “광고에 바로 쓰이는 숏폼”으로 완성합니다.
-          </p>
-
-          <div class="hero__grid">
-            <article class="card heroCard">
-              <div class="heroCard__glow" aria-hidden="true"></div>
-
-              <div class="miniGrid">
-                <div class="miniStat">
-                  <div class="miniStat__k">사장님 부담</div>
-                  <div class="miniStat__v">섭외/조율/수정 ↓</div>
-                  <div class="miniStat__d">DM 섭외의 번거로움과 불확실성을 구조적으로 줄입니다.</div>
-                </div>
-                <div class="miniStat">
-                  <div class="miniStat__k">소재 운영</div>
-                  <div class="miniStat__v">테스트 가능한 ‘자산’</div>
-                  <div class="miniStat__d">단발이 아니라 반복 집행/확장이 가능한 광고 소재로 남깁니다.</div>
-                </div>
-                <div class="miniStat">
-                  <div class="miniStat__k">전환 중심</div>
-                  <div class="miniStat__v">훅/자막/템포</div>
-                  <div class="miniStat__d">날것 원본을 매출형 숏폼 구조로 정리해 전달합니다.</div>
-                </div>
-              </div>
-
-              <div class="hero__actions">
-                <a class="btn btn--primary" href="#apply">지금 바로 신청하고 무료 상담 받기</a>
-                <a class="btn btn--ghost" href="#process">작업 방식 먼저 보기</a>
-              </div>
-
-              <div class="chips">
-                <span class="chip">대상: 음식점 · 스마트스토어 · 로컬 서비스</span>
-                <span class="chip">목표: 구매/예약/문의 전환</span>
-                <span class="chip">형태: 숏폼(15~30초 중심)</span>
-              </div>
-            </article>
-
-            <aside class="card sideCard" aria-label="핵심 요약">
-              <div class="sideItem">
-                <div class="sideItem__k">핵심 1</div>
-                <div class="sideItem__v">팔로워가 아니라 “진정성”</div>
-                <div class="sideItem__d">
-                  유명인이 말하는 광고보다 “나 같은 사람”의 경험이 더 설득력 있게 작동합니다.
-                </div>
-              </div>
-              <div class="sideItem">
-                <div class="sideItem__k">핵심 2</div>
-                <div class="sideItem__v">AI로 빠르게 ‘광고형’ 편집</div>
-                <div class="sideItem__d">훅/구성/자막을 정리해 집행 가능한 형태로 시간과 리스크를 줄입니다.</div>
-              </div>
-              <div class="sideItem">
-                <div class="sideItem__k">핵심 3</div>
-                <div class="sideItem__v">권리/사용 범위의 불안 ↓</div>
-                <div class="sideItem__d">“이거 계속 써도 되나요?”가 남지 않게 사용권을 명확히 합니다.</div>
-              </div>
-            </aside>
+          <div class="stat-item">
+            <div class="stat-val">Fast</div>
+            <div class="stat-lbl">AI 기반 초고속 편집</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val">Safe</div>
+            <div class="stat-lbl">저작권/사용범위 보장</div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- PROBLEM -->
-      <section class="section" id="problem">
-        <div class="container">
-          <h2 class="section__title">문제 제기: 소상공인이 겪는 ‘영상 광고의 함정’</h2>
-          <p class="section__desc">
-            영상이 중요한 건 모두가 알지만, 실제 운영에서는 비용·시간·불확실성이 너무 큽니다. 그래서 “한 번 해보고
-            그만두는 광고”가 되기 쉽습니다.
-          </p>
+    <!-- Problem Section -->
+    <section id="problem">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Problem</span>
+          <h2 class="section-title">사장님들이 겪는<br>영상 광고의 '현실'</h2>
+          <p class="section-desc">영상이 중요하다는 건 알지만, 막상 해보면 돈과 시간이 생각보다 더 듭니다.</p>
+        </div>
 
-          <div class="grid grid--2">
-            <div class="tile">
-              <span class="badge badge--rose">Problem 01</span>
-              <h3 class="tile__title">유명 인플루언서 = 비싼데, 성과는 불확실</h3>
-              <p class="tile__desc">단발성 노출에 예산이 묶이고, 매출로 이어지는 구조가 아니라 “운”이 되기 쉽습니다.</p>
-            </div>
-
-            <div class="tile">
-              <span class="badge badge--rose">Problem 02</span>
-              <h3 class="tile__title">섭외/소통/일정 조율이 사장님 몫</h3>
-              <p class="tile__desc">DM, 견적, 촬영, 수정 요청까지… 사장님이 프로젝트 매니저가 됩니다.</p>
-            </div>
-
-            <div class="tile">
-              <span class="badge badge--rose">Problem 03</span>
-              <h3 class="tile__title">영상 퀄리티 복불복</h3>
-              <p class="tile__desc">광고로 쓰기엔 애매한 결과물이 나와도, “다시 만들기”가 어렵습니다.</p>
-            </div>
-
-            <div class="tile">
-              <span class="badge badge--rose">Problem 04</span>
-              <h3 class="tile__title">저작권/초상권/사용범위가 불명확</h3>
-              <p class="tile__desc">문제가 생길까 불안해서 결국 광고 집행을 못 하는 케이스도 많습니다.</p>
-            </div>
+        <div class="grid-2">
+          <div class="card">
+            <span class="prob-num">01</span>
+            <h3 class="card-title">비싼데 성과는 불확실</h3>
+            <p class="card-text">
+              유명 인플루언서 단발성 광고에 큰 비용이 묶이고, 매출로 이어질지는 '운'에 맡겨야 합니다.
+            </p>
           </div>
-
-          <div class="callout">
-            <div class="callout__title">결국 남는 질문</div>
-            <div class="callout__body">
-              “<b>내 가게/내 상품을 진짜 사고 싶게 만드는 영상</b>을, <b>합리적인 비용</b>으로, <b>안전하게</b> 만들 수
-              없을까?”
-            </div>
+          <div class="card">
+            <span class="prob-num">02</span>
+            <h3 class="card-title">섭외부터 조율까지 '일 폭탄'</h3>
+            <p class="card-text">
+              DM 보내고, 견적 확인하고, 일정 잡고, 수정 요청하고... 사장님이 매니저가 되어버립니다.
+            </p>
+          </div>
+          <div class="card">
+            <span class="prob-num">03</span>
+            <h3 class="card-title">퀄리티 복불복</h3>
+            <p class="card-text">"이게 광고용으로 쓰기엔..." 싶은 퀄리티가 나와도, 환불이나 재촬영이 어렵습니다.</p>
+          </div>
+          <div class="card">
+            <span class="prob-num">04</span>
+            <h3 class="card-title">불안한 저작권/사용권</h3>
+            <p class="card-text">광고 집행하다가 초상권 문제 생길까봐 불안해서 결국 제대로 활용을 못합니다.</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- SOLUTION -->
-      <section class="section" id="solution">
-        <div class="container">
-          <h2 class="section__title">해결책: 왜 지금은 ‘유명인’이 아니라 UGC인가?</h2>
-          <p class="section__desc">
-            고객은 팔로워 수보다 <b>콘텐츠의 진정성</b>을 먼저 봅니다. “광고처럼 보이는 말”보다,
-            <b>진짜 사람이 직접 써보고 말하는 장면</b>이 구매 결정을 빠르게 만듭니다.
-          </p>
+    <!-- Solution Section -->
+    <section id="solution">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Solution</span>
+          <h2 class="section-title">팔로워보다 중요한 건<br><span class="text-brand">콘텐츠의 '진정성'</span></h2>
+          <p class="section-desc">이제 고객은 광고 같은 멘트보다, 진짜 사람이 직접 써보고 말하는 장면에 반응합니다.</p>
+        </div>
 
-          <div class="grid grid--3">
-            <div class="tile">
-              <span class="badge badge--brand">핵심 논리 1</span>
-              <h3 class="tile__title">팔로워가 아니라 “상황”이 설득합니다</h3>
-              <p class="tile__desc">
-                첫 인상 → 사용 과정 → 전후 비교 → 한 줄 후기 같은 장면이 ‘내 일’처럼 느껴지게 합니다.
-              </p>
-            </div>
-            <div class="tile">
-              <span class="badge badge--brand">핵심 논리 2</span>
-              <h3 class="tile__title">UGC는 광고 소재로 “쌓이는 자산”</h3>
-              <p class="tile__desc">테스트 → 성과 좋은 소재 유지 → 반복 확장 구조를 만들 수 있습니다.</p>
-            </div>
-            <div class="tile">
-              <span class="badge badge--brand">핵심 논리 3</span>
-              <h3 class="tile__title">짧지만, 매출 메시지만 남깁니다</h3>
-              <p class="tile__desc">
-                “누구에게 / 어떤 문제를 / 어떻게 해결”이 15~30초 안에 들어가면 전환이 달라집니다.
-              </p>
-            </div>
+        <div class="sol-grid">
+          <div class="sol-card">
+            <div class="sol-icon">🗣️</div>
+            <h3>상황이 설득합니다</h3>
+            <p style="color: var(--muted); font-size: 15px">
+              "나도 저랬는데?"하는 공감 포인트와 리얼한 사용 과정이 구매를 부릅니다.
+            </p>
+          </div>
+          <div class="sol-card">
+            <div class="sol-icon">🧱</div>
+            <h3>자산으로 쌓이는 소재</h3>
+            <p style="color: var(--muted); font-size: 15px">
+              일회성이 아닙니다. 성과 좋은 소재를 찾아 계속 확장하고 반복 집행하세요.
+            </p>
+          </div>
+          <div class="sol-card">
+            <div class="sol-icon">⚡</div>
+            <h3>매출 최적화 메시지</h3>
+            <p style="color: var(--muted); font-size: 15px">
+              누구에게, 어떤 문제를, 어떻게 해결하는지가 15초 안에 명확히 들어갑니다.
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- FEATURES -->
-      <section class="section" id="features">
-        <div class="container">
-          <h2 class="section__title">돈되는쇼츠의 3대 강점</h2>
-          <p class="section__desc">
-            소상공인이 “영상 제작”을 리스크가 아니라 <b>운영 가능한 시스템</b>으로 만들도록 설계했습니다.
-          </p>
-
-          <div class="grid grid--3">
-            <div class="tile tile--soft">
-              <span class="badge badge--green">01</span>
-              <h3 class="tile__title">무제한 사용권</h3>
-              <p class="tile__desc">
-                한 번 구매한 콘텐츠를 <b>광고 소재로 영구 활용</b>할 수 있도록 사용 범위를 명확히 합니다. 불안 없이 마음
-                놓고 집행하세요.
-              </p>
-            </div>
-
-            <div class="tile tile--soft">
-              <span class="badge badge--green">02</span>
-              <h3 class="tile__title">AI 초고속 편집</h3>
-              <p class="tile__desc">
-                일반인이 찍은 ‘날것의 원본’을 <b>후킹/자막/구성/템포</b>로 정리해 <b>매출 최적화 숏폼</b>으로
-                변환합니다.
-              </p>
-              <div class="micro">예: 오프닝 1초 훅 → 문제 → 해결(제품/서비스) → 리얼 리액션 → CTA(예약/구매)</div>
-            </div>
-
-            <div class="tile tile--soft">
-              <span class="badge badge--green">03</span>
-              <h3 class="tile__title">검증된 제작자 풀</h3>
-              <p class="tile__desc">
-                카메라 앞에서 자연스럽게 말하는 <b>일반인/나노 크리에이터</b>를 큐레이션해 매칭합니다. “대본 읽는
-                느낌”이 아닌 진짜 후기 톤을 만듭니다.
-              </p>
-            </div>
-          </div>
+    <!-- Features Section -->
+    <section id="features">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Why Us</span>
+          <h2 class="section-title">돈되는쇼츠의<br>3가지 핵심 강점</h2>
         </div>
-      </section>
 
-      <!-- SHORTS ROLLING BANNER -->
-      <section id="shorts-banner" class="shorts">
-        <div class="container">
-          <div class="shorts__head">
-            <div>
-              <div class="pill">
-                <span class="pill__dot" aria-hidden="true"></span>
-                실제 제작 예시 (쇼츠 롤링 배너)
-              </div>
-              <h2 class="section__title" style="margin-top: 12px">이런 영상이 ‘소재’로 쌓입니다</h2>
-              <p class="section__desc" style="margin-bottom: 0">
-                아래 카드에 <b>영상 URL</b>만 넣으면 자동으로 배너가 채워져요. (클릭 시 새창)
-              </p>
-            </div>
-
-            <div class="shorts__controls">
-              <button class="btn btn--ghost" type="button" data-shorts-prev="" aria-label="이전">←</button>
-              <button class="btn btn--ghost" type="button" data-shorts-next="" aria-label="다음">→</button>
-            </div>
-          </div>
-
-          <div class="shorts__frame" data-shorts-frame="">
-            <div class="shorts__track" data-shorts-track="" aria-label="쇼츠 예시 롤링 트랙">
-              <!-- JS가 카드 생성/복제해서 채움 -->
-            </div>
-          </div>
-
-          <div class="shorts__hint">
-            팁: 유튜브 링크를 넣으면 썸네일이 자동으로 잡힙니다. 다른 플랫폼은 thumbnail 값을 같이 넣어주세요.
-          </div>
-        </div>
-      </section>
-
-      <!-- PROCESS -->
-      <section class="section" id="process">
-        <div class="container">
-          <h2 class="section__title">작업 프로세스 (Step-by-Step)</h2>
-          <p class="section__desc">복잡한 제작/섭외는 저희가 정리합니다. 사장님은 핵심 정보만 전달해주시면 됩니다.</p>
-
-          <div class="steps">
-            <div class="step">
-              <div class="step__n">1</div>
-              <div class="step__body">
-                <div class="step__t">접수(구글폼)</div>
-                <div class="step__d">업종/상품, 타겟, 원하는 톤, 레퍼런스 링크 입력</div>
-              </div>
-            </div>
-
-            <div class="step">
-              <div class="step__n">2</div>
-              <div class="step__body">
-                <div class="step__t">크리에이터 큐레이션</div>
-                <div class="step__d">업종 적합도/톤/카메라 경험 기준으로 후보 매칭</div>
-              </div>
-            </div>
-
-            <div class="step">
-              <div class="step__n">3</div>
-              <div class="step__body">
-                <div class="step__t">촬영 가이드 발송</div>
-                <div class="step__d">훅 문장, 컷 구성, 금지 표현/주의사항까지 제공</div>
-              </div>
-            </div>
-
-            <div class="step">
-              <div class="step__n">4</div>
-              <div class="step__body">
-                <div class="step__t">원본 수령 및 AI 편집</div>
-                <div class="step__d">자막/템포/구성을 정리해 숏폼 광고 소재로 완성</div>
-              </div>
-            </div>
-
-            <div class="step">
-              <div class="step__n">5</div>
-              <div class="step__body">
-                <div class="step__t">최종 납품</div>
-                <div class="step__d">업로드/광고 집행에 바로 쓸 수 있는 포맷으로 전달</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="note">
-            원하시면 함께 정리해드립니다: 제품 USP(한 줄 강점) / 금지 표현(과장광고 방지) / 고객 FAQ 기반 훅 소재 /
-            업종별 톤앤매너
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA CHOICE (Pricing Replacement) -->
-      <section class="section" id="choice">
-        <div class="container">
-          <h2 class="section__title">원하는 서비스를 선택하세요</h2>
-          <p class="section__desc">합리적인 비용으로 광고 소재를 얻거나, 영상을 찍고 수익을 창출하세요.</p>
-
-          <div class="cta-choice">
-            <!-- 왼쪽: 영상 의뢰 -->
-            <a class="choice-card choice-card--indigo" href="https://YOUR-GOOGLE-FORM-LINK-HERE" target="_blank" rel="noreferrer noopener">
-              <div class="choice-card__title">영상 의뢰</div>
-              <div class="choice-card__desc">(15초 20만원 부터)</div>
-            </a>
-
-            <!-- 오른쪽: 크리에이터 -->
-            <a class="choice-card choice-card--green" href="https://YOUR-GOOGLE-FORM-LINK-HERE" target="_blank" rel="noreferrer noopener">
-              <div class="choice-card__title">영상 찍고 수익 창출</div>
-              <div class="choice-card__desc">크리에이터 신청하기</div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAQ -->
-      <section class="section" id="faq">
-        <div class="container">
-          <h2 class="section__title">FAQ</h2>
-          <p class="section__desc">사장님들이 가장 자주 묻는 질문부터 먼저 답변드립니다.</p>
-
-          <div class="faqList">
-            <details open="">
-              <summary>Q. 직접 연락(DM)하는 것보다 왜 이 플랫폼이 안전한가요?</summary>
+        <div class="feat-list">
+          <div class="feat-item">
+            <div class="feat-num">01</div>
+            <div class="feat-content">
+              <h3>무제한 사용권 보장</h3>
               <p>
-                A. DM 섭외는 <b>사용 범위/저작권/초상권/수정 범위</b>가 애매해 분쟁 리스크가 생기기 쉽습니다.
-                <b>돈되는쇼츠</b>는 프로젝트 단위로 제작 범위와 사용 조건을 명확히 정리하고, 매칭과 납품 과정도 단계별로
-                관리해 “연락 끊김/퀄리티 복불복/권리 문제”를 줄입니다.
-              </p>
-            </details>
-
-            <details>
-              <summary>Q. 우리 업종/상품은 영상으로 표현하기 어려운데 가능할까요?</summary>
-              <p>
-                A. 가능합니다. 오히려 어려운 업종일수록 <b>UGC의 ‘상황 연출’</b>이 강합니다. “누가 / 어떤 이유로 / 어떤
-                장면에서 / 왜 만족했는지”를 잡아드려요.
-              </p>
-            </details>
-
-            <details>
-              <summary>Q. 촬영은 어떻게 진행되나요? 사장님이 등장해야 하나요?</summary>
-              <p>
-                A. 사장님 출연은 필수 아닙니다. <b>크리에이터가 가이드에 맞춰 촬영</b>하고, 필요 시 제품/매장 특징을
-                살리는 컷만 추가 요청드립니다.
-              </p>
-            </details>
-
-            <details>
-              <summary>Q. 결과물은 어디에 사용할 수 있나요?</summary>
-              <p>
-                A. 인스타그램 릴스/유튜브 쇼츠/틱톡 업로드는 물론, 메타·구글·네이버 등 광고 소재로도 활용할 수 있게 납품
-                포맷을 맞춰드립니다. (세부 집행 채널은 상담 시 상황에 맞춰 권장드립니다.)
-              </p>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <!-- APPLY / CTA -->
-      <section class="section" id="apply">
-        <div class="container">
-          <div class="cta">
-            <div class="cta__text">
-              <h2 class="cta__title">
-                지금 필요한 건 “더 큰 광고”가 아니라<br>
-                “매일 쓸 수 있는 영상 자산”입니다.
-              </h2>
-              <p class="cta__desc">
-                아래 버튼에 <b>구글 폼 링크</b>만 연결하면, 바로 신청/상담 흐름이 완성됩니다. 부담 없이 현재
-                상황(예산/업종/목표)에 맞춰 가장 현실적인 방식으로 제안드릴게요.
+                한 번 만든 영상, 2차 활용 비용 없이 광고 소재로 영구 활용하세요. "이거 계속 써도 되나요?" 걱정을
+                없애드립니다.
               </p>
             </div>
-
-            <div class="cta__actions">
-              <!-- TODO: 구글 폼 링크로 교체 -->
-              <a class="btn btn--primary btn--big" href="https://YOUR-GOOGLE-FORM-LINK-HERE" target="_blank" rel="noreferrer">
-                지금 바로 신청하고 무료 상담 받기
-              </a>
-              <div class="cta__hint">* 링크는 나중에 바꿔도 됩니다.</div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-num">02</div>
+            <div class="feat-content">
+              <h3>AI 초고속 편집</h3>
+              <p>
+                일반인이 찍은 날것의 영상을 AI가 훅(Hooking), 자막, 템포를 조절해 '매출형 숏폼'으로 빠르게 변환합니다.
+              </p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-num">03</div>
+            <div class="feat-content">
+              <h3>검증된 일반인 크리에이터</h3>
+              <p>
+                카메라 앞에서 자연스러운 '진짜 사람'을 매칭해드립니다. 대본 읽는 연기자가 아닌, 찐 리액션을 담습니다.
+              </p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <footer class="footer">
-        <div class="container footer__inner">
-          <div>© <span id="year"></span> 돈되는쇼츠</div>
-          <div class="footer__sub">AI 기반 UGC 리뷰 영상 제작 및 매칭 서비스</div>
+    <!-- Process Section -->
+    <section id="process">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Process</span>
+          <h2 class="section-title">복잡한 과정은 뺐습니다.<br>핵심 정보만 주세요.</h2>
         </div>
-      </footer>
-    </main>
 
-    <script>
-      // 1. Year Update
-      document.getElementById('year').textContent = new Date().getFullYear();
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-name">Step 01</div>
+            <div class="step-title">간편 접수 (구글폼)</div>
+            <div class="step-desc">업종, 상품 특징, 원하는 톤, 레퍼런스 링크만 입력해주세요.</div>
+          </div>
+          <div class="step">
+            <div class="step-name">Step 02</div>
+            <div class="step-title">크리에이터 매칭 &amp; 가이드</div>
+            <div class="step-desc">가장 적합한 일반인 크리에이터를 선정하고 촬영 가이드를 발송합니다.</div>
+          </div>
+          <div class="step">
+            <div class="step-name">Step 03</div>
+            <div class="step-title">원본 수령 &amp; AI 편집</div>
+            <div class="step-desc">도착한 원본 영상을 숏폼 문법에 맞게 편집하고 자막을 입힙니다.</div>
+          </div>
+          <div class="step">
+            <div class="step-name">Step 04</div>
+            <div class="step-title">최종 납품</div>
+            <div class="step-desc">SNS 업로드 및 광고 집행이 가능한 파일 형태로 전달드립니다.</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      // 2. Mobile Menu Toggle
-      const burger = document.getElementById('burger');
-      const mobileMenu = document.getElementById('mobileMenu');
+    <!-- CTA Choice Section (Replaces Pricing) -->
+    <section id="cta-choice">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 32px">
+          <span class="section-tag" style="background: rgba(255, 255, 255, 0.1); color: white; border-color: rgba(255, 255, 255, 0.2)">Start Now</span>
+          <h2 class="section-title">어떤 서비스를 원하시나요?</h2>
+          <p class="section-desc" style="margin: 0 auto">사장님은 매출을 늘리고, 크리에이터는 수익을 만듭니다.</p>
+        </div>
 
-      function closeMenu() {
-        mobileMenu.style.display = 'none';
-        burger.setAttribute('aria-expanded', 'false');
-      }
-      function openMenu() {
-        mobileMenu.style.display = 'block';
-        burger.setAttribute('aria-expanded', 'true');
-      }
-      burger?.addEventListener('click', () => {
-        const expanded = burger.getAttribute('aria-expanded') === 'true';
-        if (expanded) closeMenu();
-        else openMenu();
-      });
-      mobileMenu?.addEventListener('click', (e) => {
-        if (e.target.closest('a')) closeMenu();
-      });
-      window.addEventListener('resize', () => {
-        if (window.innerWidth >= 981) closeMenu();
-      });
-
-      // 3. Shorts Rolling Banner Logic
-      (function () {
-        // =========================================================================
-        // [사용자 수정 영역] 아래 배열의 URL만 교체하면 됩니다.
-        // platform: 뱃지에 표시될 텍스트 (YouTube, Instagram, TikTok 등)
-        // url: 클릭 시 이동할 새창 링크
-        // thumbnail: 유튜브가 아닌 경우 직접 이미지 주소 입력 (유튜브는 자동 생성됨)
-        // =========================================================================
-        const SHORTS_ITEMS = [
-          {
-            title: '메뉴 리얼 후기 톤 (훅 1초)',
-            platform: 'YouTube',
-            url: 'https://www.youtube.com/shorts/VIDEO_ID_1',
-          },
-          { title: '전후 비교 / 만족 리액션', platform: 'YouTube', url: 'https://www.youtube.com/shorts/VIDEO_ID_2' },
-          { title: '예약 유도형 CTA 구성', platform: 'YouTube', url: 'https://www.youtube.com/shorts/VIDEO_ID_3' },
-          { title: '스마트스토어 언박싱/사용', platform: 'YouTube', url: 'https://www.youtube.com/shorts/VIDEO_ID_4' },
-          { title: '로컬 서비스 체험 후기', platform: 'YouTube', url: 'https://www.youtube.com/shorts/VIDEO_ID_5' },
-          // 예시: 다른 플랫폼
-          // { title:"인스타 릴스 예시", platform:"Instagram", url:"https://...", thumbnail:"https://..." },
-        ];
-
-        const frame = document.querySelector('[data-shorts-frame]');
-        const track = document.querySelector('[data-shorts-track]');
-        const btnPrev = document.querySelector('[data-shorts-prev]');
-        const btnNext = document.querySelector('[data-shorts-next]');
-
-        if (!frame || !track) return;
-
-        // Helper: Get YouTube Thumbnail
-        function getYouTubeId(u) {
-          try {
-            const url = new URL(u);
-            const parts = url.pathname.split('/').filter(Boolean);
-            // /shorts/ID
-            const shortsIndex = parts.indexOf('shorts');
-            if (shortsIndex >= 0 && parts[shortsIndex + 1]) return parts[shortsIndex + 1];
-            // watch?v=ID
-            const v = url.searchParams.get('v');
-            if (v) return v;
-            // youtu.be/ID
-            if (url.hostname.includes('youtu.be') && parts[0]) return parts[0];
-          } catch (e) {}
-          return null;
-        }
-
-        function getThumb(item) {
-          if (item.thumbnail) return item.thumbnail;
-          const id = getYouTubeId(item.url || '');
-          if (id) return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
-
-          // Fallback SVG
-          const svg = encodeURIComponent(
-            `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='1200'>
-            <defs>
-              <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
-                <stop offset='0' stop-color='#4f46e5' stop-opacity='0.9'/>
-                <stop offset='1' stop-color='#22c55e' stop-opacity='0.7'/>
-              </linearGradient>
-            </defs>
-            <rect width='100%' height='100%' fill='url(#g)'/>
-            <text x='50%' y='50%' fill='rgba(255,255,255,.92)' font-size='46' font-family='Arial' text-anchor='middle'>Shorts</text>
-          </svg>`,
-          );
-          return `data:image/svg+xml;charset=utf-8,${svg}`;
-        }
-
-        function cardHTML(item) {
-          const thumb = getThumb(item);
-          const safeTitle = (item.title || '쇼츠 예시').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-          const platform = (item.platform || 'Link').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-          const href = item.url || '#';
-          return `
-          <a class="shorts__card" href="${href}" target="_blank" rel="noreferrer noopener" aria-label="${safeTitle}">
-            <img class="shorts__thumb" src="${thumb}" alt="${safeTitle}" loading="lazy" />
-            <div class="shorts__play" aria-hidden="true"></div>
-            <div class="shorts__overlay">
-              <div class="shorts__title">${safeTitle}</div>
-              <div class="shorts__meta">
-                <span class="shorts__chip">${platform}</span>
-              </div>
-            </div>
+        <div class="cta-choice-container">
+          <!-- Left Button: Client -->
+          <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="choice-card choice-client">
+            <div class="icon-box">📢</div>
+            <h3 class="choice-title">영상 의뢰</h3>
+            <p class="choice-desc">
+              15초 숏폼 제작<br>
+              <strong style="color: #818cf8; font-size: 18px">20만원 부터</strong>
+            </p>
+            <div class="choice-btn-fake">신청서 작성하기 →</div>
           </a>
-        `;
-        }
 
-        // Render items + duplicate for infinite marquee illusion
-        const minCards = 10;
-        const repeats = Math.max(2, Math.ceil(minCards / Math.max(1, SHORTS_ITEMS.length)));
-        let html = '';
-        for (let i = 0; i < repeats; i++) {
-          html += SHORTS_ITEMS.map(cardHTML).join('');
-        }
-        track.innerHTML = html;
+          <!-- Right Button: Creator -->
+          <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="choice-card choice-creator">
+            <div class="icon-box">💰</div>
+            <h3 class="choice-title">영상 찍고 수익 창출</h3>
+            <p class="choice-desc">
+              내 스마트폰으로 촬영하고<br>
+              <strong style="color: #4ade80; font-size: 18px">현금 정산 받기</strong>
+            </p>
+            <div class="choice-btn-fake">크리에이터 지원하기 →</div>
+          </a>
+        </div>
+      </div>
+    </section>
 
-        // Setup Marquee Animation
-        function setupMarquee() {
-          const totalWidth = track.scrollWidth;
-          // Move half of total width (since we duplicated items)
-          const distance = Math.floor(totalWidth / 2);
-          track.style.setProperty('--marquee-distance', distance + 'px');
+    <!-- FAQ Section -->
+    <section id="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">자주 묻는 질문</h2>
+        </div>
 
-          const pxPerSec = 70;
-          const duration = Math.max(10, Math.round(distance / pxPerSec));
-          track.style.animationDuration = duration + 's';
-          track.dataset.marquee = 'on';
-        }
+        <div class="faq-list">
+          <div class="faq-item">
+            <details>
+              <summary>직접 DM으로 섭외하는 것보다 왜 안전한가요?</summary>
+              <p>
+                개인 간 거래는 먹튀, 연락 두절, 과도한 수정 요구 등 분쟁 소지가 많습니다. 돈되는쇼츠는 플랫폼이 중간에서
+                제작 범위와 납기, 정산, 저작권을 보증하여 양쪽 모두 안전하게 거래할 수 있습니다.
+              </p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>우리 가게는 영상 찍을 게 별로 없는데 괜찮나요?</summary>
+              <p>
+                오히려 좋습니다. 화려한 연출보다 '솔직한 후기' 느낌이 UGC의 핵심입니다. 제품이 택배로 도착하는 장면,
+                매장 문을 여는 장면, 한 입 먹고 짓는 표정 등 사소한 순간이 훌륭한 소재가 됩니다.
+              </p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>사장님이 직접 출연해야 하나요?</summary>
+              <p>
+                전혀 아닙니다. 100% 크리에이터가 출연하거나, 얼굴 없이 손과 목소리만 나오는 리뷰 형식도 가능합니다.
+                원하시는 연출 방향을 구글폼에 적어주시면 됩니다.
+              </p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>제작된 영상은 어디에 쓸 수 있나요?</summary>
+              <p>
+                인스타그램 릴스, 유튜브 쇼츠, 틱톡 업로드는 물론 메타/구글 광고 소재로도 제한 없이 사용 가능합니다. 2차
+                가공(컷 편집 등)도 자유롭게 하실 수 있습니다.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        // Wait for images to load to get correct width
-        const imgs = Array.from(track.querySelectorAll('img'));
-        let loadedCount = 0;
-        const onImgLoad = () => {
-          loadedCount++;
-          if (loadedCount >= imgs.length) setupMarquee();
-        };
-        if (imgs.length === 0) setupMarquee();
-        else {
-          imgs.forEach((img) => {
-            if (img.complete) onImgLoad();
-            else {
-              img.addEventListener('load', onImgLoad, { once: true });
-              img.addEventListener('error', onImgLoad, { once: true });
-            }
-          });
-        }
+    <!-- Final CTA (Replaces Apply Section) -->
+    <section style="
+        background: linear-gradient(180deg, rgba(79, 70, 229, 0.1), transparent);
+        padding: 100px 0;
+        text-align: center;
+      ">
+      <div class="container">
+        <h2 style="font-size: 36px; margin-bottom: 24px">지금 필요한 건 "더 큰 예산"이 아닙니다</h2>
+        <p style="
+            font-size: 18px;
+            color: var(--muted);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+          ">
+          매일매일 광고 소재로 쓸 수 있는 "가성비 영상 자산"을 확보하세요.<br>
+          돈되는쇼츠가 가장 빠르고 안전한 파트너가 되어드리겠습니다.
+        </p>
+        <a href="#cta-choice" class="btn btn-primary" style="padding: 16px 32px; font-size: 18px">
+          지금 바로 시작하기
+        </a>
+      </div>
+    </section>
 
-        // Pause on hover/focus
-        const pause = () => track.classList.add('is-paused');
-        const resume = () => track.classList.remove('is-paused');
-        frame.addEventListener('mouseenter', pause);
-        frame.addEventListener('mouseleave', resume);
-        frame.addEventListener('focusin', pause);
-        frame.addEventListener('focusout', resume);
-
-        // Manual Scroll / Drag support
-        frame.classList.add('shorts__frame--scroll');
-
-        // Buttons
-        function moveBy(px) {
-          pause();
-          frame.scrollBy({ left: px, behavior: 'smooth' });
-          // Resume after scroll animation roughly ends
-          setTimeout(resume, 800);
-        }
-        btnPrev?.addEventListener('click', () => moveBy(-280));
-        btnNext?.addEventListener('click', () => moveBy(280));
-
-        // Drag to scroll
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-        frame.addEventListener('mousedown', (e) => {
-          isDown = true;
-          startX = e.pageX - frame.offsetLeft;
-          scrollLeft = frame.scrollLeft;
-          pause();
-        });
-        frame.addEventListener('mouseleave', () => {
-          if (isDown) resume();
-          isDown = false;
-        });
-        frame.addEventListener('mouseup', () => {
-          if (isDown) setTimeout(resume, 400);
-          isDown = false;
-        });
-        frame.addEventListener('mousemove', (e) => {
-          if (!isDown) return;
-          e.preventDefault();
-          const x = e.pageX - frame.offsetLeft;
-          const walk = (x - startX) * 2; // scroll-fast
-          frame.scrollLeft = scrollLeft - walk;
-        });
-
-        // Touch events for mobile drag
-        frame.addEventListener('touchstart', () => {
-          pause();
-          isDown = true;
-        });
-        frame.addEventListener('touchend', () => {
-          setTimeout(resume, 400);
-          isDown = false;
-        });
-        frame.addEventListener('touchcancel', () => {
-          resume();
-          isDown = false;
-        });
-      })();
-    </script>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="logo" style="justify-content: center; margin-bottom: 24px; color: white">돈되는쇼츠</div>
+        <div class="footer-links">
+          <a href="#">이용약관</a>
+          <a href="#">개인정보처리방침</a>
+          <a href="#faq">고객센터</a>
+        </div>
+        <p>© 2024 돈되는쇼츠. All rights reserved.</p>
+        <p style="margin-top: 8px; font-size: 12px; color: var(--muted2)">AI 기반 UGC 리뷰 영상 제작 및 매칭 플랫폼</p>
+      </div>
+    </footer>
   
 
 </body></html>
