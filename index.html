@@ -374,6 +374,65 @@
         color: var(--muted);
       }
 
+<section id="shorts-banner" class="section">
+  <div class="container">
+    <div class="section__header">
+      <div class="pill">
+        <span class="pill__dot"></span>
+        실제 제작 예시
+      </div>
+      <h2 class="section__title">이런 영상이 ‘소재’로 쌓입니다</h2>
+      <p class="section__desc">
+        실제 크리에이터가 촬영하고 AI가 편집한 <b>전환율 최적화</b> 영상들입니다.
+      </p>
+    </div>
+
+    <div class="shorts-container">
+      <div class="shorts__viewport" id="shortsViewport">
+        <div class="shorts__track" id="shortsTrack">
+          <div class="shorts__item">
+            <a href="영상주소1" target="_blank" class="shorts__card">
+              <div class="shorts__overlay">
+                <span class="shorts__category">뷰티/코스메틱</span>
+              </div>
+              <img src="https://via.placeholder.com/360x640/111/fff?text=Sample+1" alt="UGC 1">
+            </a>
+          </div>
+          <div class="shorts__item">
+            <a href="영상주소2" target="_blank" class="shorts__card">
+              <div class="shorts__overlay">
+                <span class="shorts__category">맛집/F&B</span>
+              </div>
+              <img src="https://via.placeholder.com/360x640/111/fff?text=Sample+2" alt="UGC 2">
+            </a>
+          </div>
+          <div class="shorts__item">
+            <a href="영상주소3" target="_blank" class="shorts__card">
+              <div class="shorts__overlay">
+                <span class="shorts__category">패션/잡화</span>
+              </div>
+              <img src="https://via.placeholder.com/360x640/111/fff?text=Sample+3" alt="UGC 3">
+            </a>
+          </div>
+          <div class="shorts__item">
+            <a href="영상주소4" target="_blank" class="shorts__card">
+              <div class="shorts__overlay">
+                <span class="shorts__category">IT/가전</span>
+              </div>
+              <img src="https://via.placeholder.com/360x640/111/fff?text=Sample+4" alt="UGC 4">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="shorts__controls">
+        <button class="btn btn--ghost shorts__btn--prev" type="button" onclick="moveSlider(-1)">←</button>
+        <button class="btn btn--ghost shorts__btn--next" type="button" onclick="moveSlider(1)">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+        
       /* Process */
       .process-steps {
         position: relative;
