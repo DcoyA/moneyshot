@@ -1,1027 +1,718 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="light" style=""><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <title>돈되는쇼츠 | 매출을 올리는 리얼 UGC 리뷰 영상 제작</title>
-    <meta name="description" content="15만원으로 만드는 고효율 쇼츠 광고. 초상권 걱정 없는 리얼 리뷰 영상으로 사장님의 매출을 3배 높여드립니다.">
-    <meta name="keywords" content="돈되는쇼츠, UGC제작, 쇼츠광고, 리얼리뷰, 숏폼마케팅">
-    <meta property="og:title" content="돈되는쇼츠 - 매출 엔진을 다세요">
-    <meta property="og:description" content="리얼 리뷰 영상 하나로 바뀌는 놀라운 매출 변화.">
-    <meta property="og:url" content="https://dcoya.github.io/moneyshot/">
-    <meta name="theme-color" content="#4f46e5">
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>헬로미디어 | 제품만 보내세요. 최적 모델 매칭 + 광고용 리뷰영상 제작</title>
+  <meta name="description" content="15만원에 최적 모델 매칭, 리뷰 영상 제작, 광고 사용권까지. 헬로미디어가 처음부터 끝까지 대행합니다." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
 
-    <style>
-      :root {
-        --bg: #0b1120;
-        --surface: rgba(255, 255, 255, 0.03);
-        --surface-hover: rgba(255, 255, 255, 0.06);
-        --border: rgba(255, 255, 255, 0.08);
-        --text: rgba(255, 255, 255, 0.92);
-        --muted: rgba(255, 255, 255, 0.65);
-        --muted2: rgba(255, 255, 255, 0.45);
-        --brand: #4f46e5; /* indigo */
-        --brand-glow: rgba(79, 70, 229, 0.35);
-        --accent: #22c55e; /* green */
-        --accent-glow: rgba(34, 197, 94, 0.25);
-        --shadow: 0 20px 80px -10px rgba(0, 0, 0, 0.6);
-        --radius: 20px;
-        --radius-sm: 12px;
-        --max-w: 1080px;
-        --font-main:
-          -apple-system, BlinkMacSystemFont, 'Pretendard Variable', Pretendard, system-ui, Roboto, 'Helvetica Neue',
-          'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-      }
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="logo">
+        <img src="images/logo.png" alt="헬로미디어 로고" class="logo-img" />
+        <span class="logo-text">헬로미디어</span>
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#samples" class="nav-link">제작예시</a>
+        <a href="#package" class="nav-link">패키지</a>
+        <a href="#difference" class="nav-link">차별점</a>
+        <a href="#process" class="nav-link">프로세스</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+      <a href="https://open.kakao.com/o/srEOdDai" target="_blank" class="btn btn-primary header-cta">
+        <i class="fas fa-comment"></i> 카카오톡 문의
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        font-family: var(--font-main);
-        background-color: var(--bg);
-        background-image:
-          radial-gradient(circle at 15% 0%, rgba(79, 70, 229, 0.15) 0%, transparent 40%),
-          radial-gradient(circle at 85% 100%, rgba(34, 197, 94, 0.1) 0%, transparent 40%);
-        color: var(--text);
-        line-height: 1.6;
-        letter-spacing: -0.02em;
-        overflow-x: hidden;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-        transition: 0.2s;
-      }
-      button {
-        background: none;
-        border: none;
-        font: inherit;
-        cursor: pointer;
-        color: inherit;
-      }
-
-      /* Layout */
-      .container {
-        width: 100%;
-        max-width: var(--max-w);
-        margin: 0 auto;
-        padding: 0 24px;
-      }
-
-      /* Typography */
-      h1,
-      h2,
-      h3 {
-        margin: 0;
-        line-height: 1.2;
-        font-weight: 800;
-      }
-      p {
-        margin: 0;
-      }
-      .text-gradient {
-        background: linear-gradient(135deg, #fff 30%, var(--brand) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .text-accent {
-        color: var(--accent);
-      }
-      .text-brand {
-        color: var(--brand);
-      }
-
-      /* Buttons */
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 14px 24px;
-        border-radius: var(--radius-sm);
-        font-weight: 700;
-        font-size: 16px;
-        transition: all 0.2s ease;
-        white-space: nowrap;
-      }
-      .btn-primary {
-        background: var(--brand);
-        color: white;
-        box-shadow: 0 4px 20px rgba(79, 70, 229, 0.4);
-      }
-      .btn-primary:hover {
-        background: #4338ca;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 30px rgba(79, 70, 229, 0.5);
-      }
-      .btn-outline {
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.03);
-      }
-      .btn-outline:hover {
-        border-color: rgba(255, 255, 255, 0.2);
-        background: rgba(255, 255, 255, 0.08);
-      }
-      .btn-nav {
-        font-size: 14px;
-        color: var(--muted);
-        padding: 8px 12px;
-      }
-      .btn-nav:hover {
-        color: white;
-      }
-
-      /* Navbar */
-      .nav {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        background: rgba(11, 17, 32, 0.85);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--border);
-        height: 64px;
-        display: flex;
-        align-items: center;
-      }
-      .nav-inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .logo {
-        font-weight: 900;
-        font-size: 18px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .logo-icon {
-        width: 28px;
-        height: 28px;
-        background: linear-gradient(135deg, var(--brand), var(--accent));
-        border-radius: 8px;
-      }
-      .nav-menu {
-        display: none;
-        gap: 4px;
-      }
-      .nav-cta {
-        display: none;
-      }
-
-      @media (min-width: 768px) {
-        .nav-menu {
-          display: flex;
-        }
-        .nav-cta {
-          display: block;
-        }
-      }
-
-      /* Section Common */
-      section {
-        padding: 80px 0;
-      }
-      .section-header {
-        margin-bottom: 48px;
-        text-align: left;
-      }
-      .section-tag {
-        display: inline-block;
-        padding: 6px 12px;
-        border-radius: 100px;
-        font-size: 13px;
-        font-weight: 700;
-        background: rgba(79, 70, 229, 0.1);
-        color: #818cf8;
-        border: 1px solid rgba(79, 70, 229, 0.2);
-        margin-bottom: 16px;
-      }
-      .section-title {
-        font-size: 32px;
-        margin-bottom: 16px;
-      }
-      .section-desc {
-        font-size: 17px;
-        color: var(--muted);
-        max-width: 600px;
-      }
-
-      /* Hero */
-      .hero {
-        padding-top: 100px;
-        padding-bottom: 80px;
-        text-align: center;
-      }
-      .hero-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 6px 16px;
-        border-radius: 100px;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid var(--border);
-        font-size: 14px;
-        color: var(--muted);
-        margin-bottom: 24px;
-      }
-      .hero-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: var(--accent);
-        box-shadow: 0 0 10px var(--accent-glow);
-      }
-      .hero-title {
-        font-size: clamp(36px, 5vw, 64px);
-        line-height: 1.1;
-        margin-bottom: 24px;
-        letter-spacing: -0.03em;
-      }
-      .hero-sub {
-        font-size: 18px;
-        color: var(--muted);
-        max-width: 700px;
-        margin: 0 auto 40px;
-      }
-      .hero-actions {
-        display: flex;
-        gap: 12px;
-        justify-content: center;
-        margin-bottom: 60px;
-      }
-      .hero-stats {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1px;
-        background: var(--border);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        overflow: hidden;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-      .stat-item {
-        background: rgba(11, 17, 32, 0.6);
-        padding: 24px;
-        text-align: center;
-      }
-      .stat-val {
-        font-size: 24px;
-        font-weight: 800;
-        color: white;
-        margin-bottom: 4px;
-      }
-      .stat-lbl {
-        font-size: 14px;
-        color: var(--muted);
-      }
-
-      /* Problem Grid */
-      .grid-2 {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      @media (min-width: 768px) {
-        .grid-2 {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-
-      .card {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 32px;
-        transition: 0.3s;
-      }
-      .card:hover {
-        border-color: rgba(255, 255, 255, 0.15);
-      }
-
-      .prob-num {
-        font-size: 12px;
-        font-weight: 700;
-        color: #f43f5e;
-        margin-bottom: 12px;
-        display: block;
-      }
-      .card-title {
-        font-size: 20px;
-        margin-bottom: 12px;
-        color: white;
-      }
-      .card-text {
-        font-size: 15px;
-        color: var(--muted);
-      }
-
-      /* Solution */
-      .sol-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-      }
-      .sol-card {
-        padding: 24px;
-        border-radius: 16px;
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.03), transparent);
-        border: 1px solid var(--border);
-      }
-      .sol-icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 10px;
-        background: rgba(79, 70, 229, 0.1);
-        color: var(--brand);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 16px;
-        font-size: 20px;
-      }
-
-      /* Features */
-      .feat-list {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-      }
-      .feat-item {
-        display: flex;
-        gap: 24px;
-        padding: 32px;
-        border-radius: var(--radius);
-        background: var(--surface);
-        border: 1px solid var(--border);
-        align-items: flex-start;
-      }
-      .feat-num {
-        font-size: 48px;
-        font-weight: 900;
-        color: rgba(255, 255, 255, 0.05);
-        line-height: 0.8;
-      }
-      .feat-content h3 {
-        font-size: 22px;
-        margin-bottom: 8px;
-      }
-      .feat-content p {
-        color: var(--muted);
-      }
-
-      /* Process */
-      .process-steps {
-        position: relative;
-        padding-left: 20px;
-        border-left: 2px solid var(--border);
-      }
-      .step {
-        position: relative;
-        padding-left: 32px;
-        margin-bottom: 40px;
-      }
-      .step:last-child {
-        margin-bottom: 0;
-      }
-      .step::before {
-        content: '';
-        position: absolute;
-        left: -9px;
-        top: 0;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background: var(--bg);
-        border: 2px solid var(--brand);
-      }
-      .step-name {
-        font-size: 14px;
-        font-weight: 700;
-        color: var(--brand);
-        margin-bottom: 4px;
-        text-transform: uppercase;
-      }
-      .step-title {
-        font-size: 18px;
-        color: white;
-        margin-bottom: 4px;
-      }
-      .step-desc {
-        font-size: 14px;
-        color: var(--muted);
-      }
-
-      /* Pricing Replacement: CTA Choice */
-      .cta-choice-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 24px;
-        margin-top: 24px;
-      }
-      @media (min-width: 768px) {
-        .cta-choice-container {
-          grid-template-columns: 1fr 1fr;
-          gap: 32px;
-        }
-      }
-      .choice-card {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 48px 32px;
-        border-radius: 24px;
-        border: 2px solid var(--border);
-        background: var(--surface);
-        transition: all 0.3s ease;
-        cursor: pointer;
-        height: 100%;
-        text-decoration: none;
-      }
-      .choice-card:hover {
-        transform: translateY(-5px);
-        background: var(--surface-hover);
-        border-color: rgba(255, 255, 255, 0.2);
-      }
-
-      /* Left Card Style */
-      .choice-client {
-        border-color: rgba(79, 70, 229, 0.3);
-        background: linear-gradient(180deg, rgba(79, 70, 229, 0.05), transparent);
-      }
-      .choice-client:hover {
-        border-color: rgba(79, 70, 229, 0.6);
-        box-shadow: 0 10px 40px -10px rgba(79, 70, 229, 0.2);
-      }
-      .choice-client .icon-box {
-        background: rgba(79, 70, 229, 0.1);
-        color: #818cf8;
-      }
-
-      /* Right Card Style */
-      .choice-creator {
-        border-color: rgba(34, 197, 94, 0.3);
-        background: linear-gradient(180deg, rgba(34, 197, 94, 0.05), transparent);
-      }
-      .choice-creator:hover {
-        border-color: rgba(34, 197, 94, 0.6);
-        box-shadow: 0 10px 40px -10px rgba(34, 197, 94, 0.2);
-      }
-      .choice-creator .icon-box {
-        background: rgba(34, 197, 94, 0.1);
-        color: #4ade80;
-      }
-
-      .choice-card .icon-box {
-        width: 64px;
-        height: 64px;
-        border-radius: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 32px;
-        margin-bottom: 24px;
-      }
-      .choice-title {
-        font-size: 24px;
-        font-weight: 800;
-        color: white;
-        margin-bottom: 12px;
-      }
-      .choice-desc {
-        font-size: 16px;
-        color: var(--muted);
-        line-height: 1.5;
-      }
-      .choice-btn-fake {
-        margin-top: 32px;
-        padding: 12px 24px;
-        border-radius: 100px;
-        font-size: 14px;
-        font-weight: 700;
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .choice-card:hover .choice-btn-fake {
-        background: white;
-        color: black;
-      }
-
-      /* FAQ */
-      .faq-item {
-        border-bottom: 1px solid var(--border);
-      }
-      .faq-item:first-child {
-        border-top: 1px solid var(--border);
-      }
-      details > summary {
-        padding: 24px 0;
-        cursor: pointer;
-        font-weight: 700;
-        font-size: 18px;
-        list-style: none;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      details > summary::-webkit-details-marker {
-        display: none;
-      }
-      details > summary::after {
-        content: '+';
-        font-size: 24px;
-        font-weight: 300;
-        color: var(--muted);
-      }
-      details[open] > summary::after {
-        content: '-';
-      }
-      details > p {
-        padding-bottom: 24px;
-        color: var(--muted);
-        line-height: 1.6;
-      }
-
-      /* Footer */
-      footer {
-        border-top: 1px solid var(--border);
-        padding: 60px 0;
-        text-align: center;
-        color: var(--muted2);
-        font-size: 14px;
-      }
-      .footer-links {
-        display: flex;
-        justify-content: center;
-        gap: 24px;
-        margin-bottom: 24px;
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .hero-stats {
-          grid-template-columns: 1fr;
-          border: none;
-          background: none;
-          gap: 12px;
-        }
-        .stat-item {
-          border-radius: 12px;
-        }
-        .feat-item {
-          flex-direction: column;
-          gap: 16px;
-        }
-        .feat-num {
-          font-size: 32px;
-        }
-        .hero-title {
-          font-size: 36px;
-        }
-      }
-    </style>
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16887569564">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-16887569564');
-</script>
-  </head>
-  <body style="">
-    <!-- Navigation -->
-    <nav class="nav">
-      <div class="container nav-inner">
-        <a href="#" class="logo">
-          <div class="logo-icon"></div>
-          돈되는쇼츠
-        </a>
-        <div class="nav-menu">
-          <a href="#problem" class="btn-nav">문제</a>
-          <a href="#solution" class="btn-nav">해결책</a>
-          <a href="#features" class="btn-nav">강점</a>
-          <a href="#process" class="btn-nav">프로세스</a>
-          <a href="#cta-choice" class="btn-nav">의뢰/제작</a>
-          <a href="#faq" class="btn-nav">FAQ</a>
-        </div>
-        <div class="nav-cta">
-          <a href="#cta-choice" class="btn btn-primary btn-sm" style="padding: 8px 16px; font-size: 14px">문의하기</a>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-pill">
-          <span class="hero-dot"></span>
-          AI 기반 UGC 리뷰 영상 제작 &amp; 매칭
+  <!-- ===== HERO ===== -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="badge-dot"></span> 현재 런칭 이벤트 진행 중
         </div>
         <h1 class="hero-title">
-          인플루언서 섭외했는데<br>
-          <span class="text-accent">매출은 그대로</span>였다면?
+          제품만 보내세요.<br />
+          <span class="highlight">최적 모델 매칭</span> +<br />
+          광고용 리뷰영상 제작
         </h1>
         <p class="hero-sub">
-          <b>돈되는쇼츠</b>는 <b>광고영상 소스</b>로 사용할 수 있는 <br><b>진짜 사용자(USER)</b>의 리뷰 영상을 제작해 드립니다.
+          인플루언서 DM, 섭외/조율, 촬영 가이드, 편집, 저작권까지…<br />
+          <strong>헬로미디어</strong>가 <strong>15만원</strong>으로 처음부터 끝까지 끝냅니다.
         </p>
-        <div class="hero-actions">
-          <a href="#cta-choice" class="btn btn-primary">영상 제작 의뢰하기</a>
-          <a href="#process" class="btn btn-outline">작업 방식 보기</a>
+        <div class="hero-facts">
+          <div class="fact-item"><i class="fas fa-check-circle"></i> 모델 섭외 포함</div>
+          <div class="fact-item"><i class="fas fa-check-circle"></i> 숏폼 편집 + 변형 컷 3~5개</div>
+          <div class="fact-item"><i class="fas fa-check-circle"></i> 광고 사용권 무제한</div>
+          <div class="fact-item"><i class="fas fa-check-circle"></i> 결제 후 7일 내 납품</div>
         </div>
-
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-val">Zero</div>
-            <div class="stat-lbl">복잡한 섭외/조율 과정</div>
+        <div class="hero-ctas">
+          <a href="https://open.kakao.com/o/srEOdDai" target="_blank" class="btn btn-kakao">
+            <i class="fas fa-comment-dots"></i> 카카오톡 바로 문의
+          </a>
+          <a href="#samples" class="btn btn-outline">
+            <i class="fas fa-play-circle"></i> 제작 예시 보기
+          </a>
+        </div>
+        <p class="hero-microcopy">24시간 내 회신 · 견적 무료 · 1:1 상담 가능</p>
+      </div>
+      <div class="hero-visual">
+        <div class="phone-mockup">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="video-placeholder">
+                <i class="fas fa-play-circle play-icon"></i>
+                <div class="video-label">리뷰 영상 예시</div>
+              </div>
+              <div class="screen-content">
+                <div class="comment-bubble bubble-1">
+                  <span>🚲 "이거 주행감 대박이에요!"</span>
+                </div>
+                <div class="comment-bubble bubble-2">
+                  <span>📱 "서각서각 펜촉 소리 진짜야"</span>
+                </div>
+                <div class="comment-bubble bubble-3">
+                  <span>🍖 "와.. 육즙 미쳤다!"</span>
+                </div>
+              </div>
+              <div class="stats-bar">
+                <div class="stat">
+                  <i class="fas fa-heart"></i>
+                  <span>4.2K</span>
+                </div>
+                <div class="stat">
+                  <i class="fas fa-share"></i>
+                  <span>812</span>
+                </div>
+                <div class="stat">
+                  <i class="fas fa-eye"></i>
+                  <span>38K</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="stat-item">
-            <div class="stat-val">Fast</div>
-            <div class="stat-lbl">초고속 편집</div>
+        </div>
+        <div class="hero-badge-float badge-top">
+          <i class="fas fa-award"></i>
+          <div>
+            <div class="badge-num">15만원</div>
+            <div class="badge-desc">올인원 패키지</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-val">Safe</div>
-            <div class="stat-lbl">저작권/사용범위 보장</div>
+        </div>
+        <div class="hero-badge-float badge-bottom">
+          <i class="fas fa-clock"></i>
+          <div>
+            <div class="badge-num">7일</div>
+            <div class="badge-desc">납품 목표</div>
           </div>
         </div>
       </div>
-    </section>
-
-
-    <!-- Problem Section -->
-    <section id="problem">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Problem</span>
-          <h2 class="section-title">사장님들이 겪는<br>영상 광고의 '현실'</h2>
-          <p class="section-desc">영상이 중요하다는 건 알지만, 막상 해보면 돈과 시간이 생각보다 더 듭니다.</p>
-        </div>
-
-        <div class="grid-2">
-          <div class="card">
-            <span class="prob-num">01</span>
-            <h3 class="card-title">비싼데 성과는 불확실</h3>
-            <p class="card-text">
-              유명 인플루언서 단발성 광고에 큰 비용이 묶이고, 매출로 이어질지는 '운'에 맡겨야 합니다.
-            </p>
-          </div>
-          <div class="card">
-            <span class="prob-num">02</span>
-            <h3 class="card-title">섭외부터 조율까지 '일 폭탄'</h3>
-            <p class="card-text">
-              DM 보내고, 견적 확인하고, 일정 잡고, 수정 요청하고... 사장님이 매니저가 되어버립니다.
-            </p>
-          </div>
-          <div class="card">
-            <span class="prob-num">03</span>
-            <h3 class="card-title">퀄리티 복불복</h3>
-            <p class="card-text">"이게 광고용으로 쓰기엔..." 싶은 퀄리티가 나와도, 환불이나 재촬영이 어렵습니다.</p>
-          </div>
-          <div class="card">
-            <span class="prob-num">04</span>
-            <h3 class="card-title">불안한 저작권/사용권</h3>
-            <p class="card-text">광고 집행하다가 초상권 문제 생길까봐 불안해서 결국 제대로 활용을 못합니다.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Solution Section -->
-    <section id="solution">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Solution</span>
-          <h2 class="section-title">팔로워보다 중요한 건<br><span class="text-brand">콘텐츠의 '진정성'</span></h2>
-          <p class="section-desc">이제 고객은 광고 같은 멘트보다, 진짜 사람이 직접 써보고 말하는 장면에 반응합니다.</p>
-        </div>
-
-        <div class="sol-grid">
-          <div class="sol-card">
-            <div class="sol-icon">🗣️</div>
-            <h3>상황이 설득합니다</h3>
-            <p style="color: var(--muted); font-size: 15px">
-              "나도 저랬는데?"하는 공감 포인트와 리얼한 사용 과정이 구매를 부릅니다.
-            </p>
-          </div>
-          <div class="sol-card">
-            <div class="sol-icon">🧱</div>
-            <h3>자산으로 쌓이는 소재</h3>
-            <p style="color: var(--muted); font-size: 15px">
-              일회성이 아닙니다. 성과 좋은 소재를 찾아 계속 확장하고 반복 집행하세요.
-            </p>
-          </div>
-          <div class="sol-card">
-            <div class="sol-icon">⚡</div>
-            <h3>매출 최적화 메시지</h3>
-            <p style="color: var(--muted); font-size: 15px">
-              누구에게, 어떤 문제를, 어떻게 해결하는지가 15초 안에 명확히 들어갑니다.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-    <!-- Problem Section -->
-<section id="shorts-banner" class="section" style="background: var(--bg); border-top: 1px solid var(--border); padding: 80px 0;">
-  <div class="container">
-    <div class="section__header" style="text-align: center; margin-bottom: 40px;">
-      <div class="pill" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 100px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); font-size: 14px; color: var(--muted); margin-bottom: 16px;">
-        <span class="pill__dot" style="width: 8px; height: 8px; border-radius: 50%; background: var(--brand);"></span>
-        실제 제작 예시
-      </div>
-      <h2 class="section__title" style="font-size: 32px; font-weight: 800; color: white; margin-bottom: 16px;">이런 영상이 ‘소재’로 쌓입니다</h2>
-      <p class="section__desc" style="font-size: 17px; color: var(--muted);">
-        실제 크리에이터가 촬영하고 AI가 편집한 <b>전환율 최적화</b> 영상들입니다.
-      </p>
     </div>
+    <div class="hero-scroll-hint">
+      <span>스크롤하여 더 보기</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
 
-    <div class="shorts-container" style="position: relative; padding: 0 10px;">
-      <div id="shortsViewport" style="overflow: hidden; width: 100%; border-radius: 20px;">
-        <div id="shortsTrack" style="display: flex; gap: 20px; transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);">
-          
-          <div class="shorts-item" style="flex: 0 0 240px;">
-  		<a href="https://billo.app/wp-content/uploads/2025/04/8-Health_Wellness_169096_Andrew_Michigan_4.94.mp4" target="_blank" class="shorts-card-link" style="display: block; position: relative; aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: #111;">
-    		<video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
-     			 <source src="https://billo.app/wp-content/uploads/2025/04/8-Health_Wellness_169096_Andrew_Michigan_4.94.mp4" type="video/mp4">
-    		</video>
-   		 <div style="position: absolute; bottom: 20px; left: 15px; background: var(--brand); color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">헬스/웰니스</div>
-  		</a>
-	</div>
+  <!-- ===== PAIN POINTS ===== -->
+  <section class="pain-section" id="pain">
+    <div class="container">
+      <div class="section-label">사장님들이 공감하는 현실</div>
+      <h2 class="section-title">마케팅, 직접 하려니 <span class="highlight">이런 상황</span> 겪어보셨죠?</h2>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-icon"><i class="fas fa-paper-plane"></i></div>
+          <h3>인플루언서 DM 무응답</h3>
+          <p>팔로워 많은 인플루언서에게 DM 보내봤자 답장 한 통 없고, 어쩌다 답이 와도 금액이 엄청납니다.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon"><i class="fas fa-building"></i></div>
+          <h3>에이전시 견적은 수백만 원</h3>
+          <p>제대로 된 영상 하나 만들려면 기획비·촬영비·편집비… 합치면 소상공인이 감당하기 어려운 비용입니다.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon"><i class="fas fa-gift"></i></div>
+          <h3>조공 퍼줘도 광고에 못 씀</h3>
+          <p>공짜로 제품 보내줬는데 리뷰 퀄리티도 복불복이고, 광고 소재로 쓰려면 초상권 문제로 활용을 못 합니다.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon"><i class="fas fa-exclamation-triangle"></i></div>
+          <h3>저작권·사용권 불안</h3>
+          <p>겨우 구한 영상인데 광고 집행하다가 초상권 분쟁 생길까봐 불안해서 결국 제대로 활용 못 합니다.</p>
+        </div>
+      </div>
+      <div class="pain-solution-bridge">
+        <div class="bridge-line"></div>
+        <div class="bridge-text">
+          <span class="bridge-arrow">↓</span>
+          <strong>헬로미디어가 이 모든 과정을 15만원으로 끝냅니다</strong>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<div class="shorts-item" style="flex: 0 0 240px;">
-  <a href="https://billo.app/wp-content/uploads/2025/04/7-Health_Wellness_326618_Natalie_California_4.7.mp4" target="_blank" class="shorts-card-link" style="display: block; position: relative; aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: #111;">
-    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
-      <source src="https://billo.app/wp-content/uploads/2025/04/7-Health_Wellness_326618_Natalie_California_4.7.mp4" type="video/mp4">
-    </video>
-    <div style="position: absolute; bottom: 20px; left: 15px; background: var(--brand); color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">영양/보조제</div>
-  </a>
-</div>
-
-<div class="shorts-item" style="flex: 0 0 240px;">
-  <a href="https://billo.app/wp-content/uploads/2025/04/6-Health_Wellness_260376_Taylor_Florida_4.9.mp4" target="_blank" class="shorts-card-link" style="display: block; position: relative; aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: #111;">
-    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
-      <source src="https://billo.app/wp-content/uploads/2025/04/6-Health_Wellness_260376_Taylor_Florida_4.9.mp4" type="video/mp4">
-    </video>
-    <div style="position: absolute; bottom: 20px; left: 15px; background: var(--brand); color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">라이프스타일</div>
-  </a>
-</div>
-
-<div class="shorts-item" style="flex: 0 0 240px;">
-  <a href="https://billo.app/wp-content/uploads/2025/04/5-Health_Wellness_111465_Alexis_California_4.93.mp4" target="_blank" class="shorts-card-link" style="display: block; position: relative; aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: #111;">
-    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
-      <source src="https://billo.app/wp-content/uploads/2025/04/5-Health_Wellness_111465_Alexis_California_4.93.mp4" type="video/mp4">
-    </video>
-    <div style="position: absolute; bottom: 20px; left: 15px; background: var(--brand); color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">패션/가전</div>
-  </a>
-</div>
-
-
+  <!-- ===== PACKAGE ===== -->
+  <section class="package-section" id="package">
+    <div class="container">
+      <div class="section-label">패키지 & 가격</div>
+      <h2 class="section-title">15만원에 이게 <span class="highlight">다 포함</span>됩니다</h2>
+      <div class="package-wrapper">
+        <div class="package-card main-package">
+          <div class="package-badge-top">런칭 이벤트 · 선착순 3팀 1+1</div>
+          <div class="package-header">
+            <div class="package-name">헬로미디어 기본 패키지</div>
+            <div class="package-price">
+              <span class="price-num">15만원</span>
+              <span class="price-vat">/ 건 (VAT 별도)</span>
+            </div>
+          </div>
+          <ul class="package-includes">
+            <li><i class="fas fa-check"></i> <strong>메인 리뷰 영상 1편</strong> (15~30초, 숏폼 최적화)</li>
+            <li><i class="fas fa-check"></i> <strong>광고용 변형 컷 3~5개</strong> (같은 소재, 다른 훅/버전)</li>
+            <li><i class="fas fa-check"></i> <strong>모델 매칭 + 섭외</strong> (제품 카테고리 최적 매칭)</li>
+            <li><i class="fas fa-check"></i> <strong>촬영 가이드 발송</strong> (전달 드리는 체크리스트)</li>
+            <li><i class="fas fa-check"></i> <strong>전문 편집</strong> (훅·자막·BGM·템포 최적화)</li>
+            <li><i class="fas fa-check"></i> <strong>결제 후 7일 내 납품</strong> (평균 5~7일)</li>
+            <li><i class="fas fa-check"></i> <strong>수정 1회 포함</strong></li>
+            <li><i class="fas fa-check"></i> <strong>광고 사용권 무제한</strong> (인스타·유튜브·메타광고·틱톡)</li>
+            <li><i class="fas fa-check"></i> <strong>초상권·저작권 계약</strong> (안심 사용 보증)</li>
+          </ul>
+          <div class="package-event-box">
+            <div class="event-title"><i class="fas fa-fire"></i> 런칭 이벤트: 선착순 3팀 1+1</div>
+            <div class="event-desc">영상 1개 가격으로 2개 제작! 예고 없이 종료될 수 있습니다.</div>
+          </div>
+          <div class="package-ctas">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScUmZcJZhCeZBgffTGgI3rmO5zaN1W32PE9qiKROz8OehsSfQ/viewform?usp=sharing&ouid=110619884620167652365" target="_blank" class="btn btn-primary btn-full">
+              <i class="fas fa-file-alt"></i> 구글폼으로 신청하기
+            </a>
+            <a href="https://open.kakao.com/o/srEOdDai" target="_blank" class="btn btn-kakao btn-full">
+              <i class="fas fa-comment-dots"></i> 카카오톡으로 문의하기
+            </a>
+            <a href="https://kmong.com/gig/746267" target="_blank" class="btn btn-outline btn-full">
+              <i class="fas fa-store"></i> 크몽에서 주문하기
             </a>
           </div>
         </div>
-      </div>
-
-      <button onclick="slideShorts(-1)" class="btn btn--ghost" style="position: absolute; left: -25px; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center; z-index: 10; background: rgba(11, 17, 32, 0.8); border-color: var(--border); backdrop-filter: blur(4px);">←</button>
-      <button onclick="slideShorts(1)" class="btn btn--ghost" style="position: absolute; right: -25px; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center; z-index: 10; background: rgba(11, 17, 32, 0.8); border-color: var(--border); backdrop-filter: blur(4px);">→</button>
-      </div>
-  </div>
-</section>
-
-
-
-
-    <!-- Features Section -->
-    <section id="features">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Why Us</span>
-          <h2 class="section-title">돈되는쇼츠의<br>3가지 핵심 강점</h2>
+        <div class="compare-table-wrap">
+          <h3 class="compare-title">비교해보세요</h3>
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th class="highlight-col">헬로미디어</th>
+                <th>인플루언서 직접 DM</th>
+                <th>에이전시</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>비용</td>
+                <td class="highlight-col"><strong>15만원</strong></td>
+                <td>협찬 + 추가비용</td>
+                <td>수백만원~</td>
+              </tr>
+              <tr>
+                <td>섭외</td>
+                <td class="highlight-col">전부 대행</td>
+                <td>직접 DM</td>
+                <td>일부 대행</td>
+              </tr>
+              <tr>
+                <td>편집</td>
+                <td class="highlight-col">포함</td>
+                <td>별도</td>
+                <td>포함(고가)</td>
+              </tr>
+              <tr>
+                <td>광고 사용권</td>
+                <td class="highlight-col"><strong>무제한</strong></td>
+                <td><span class="td-danger">불확실</span></td>
+                <td>계약 별도</td>
+              </tr>
+              <tr>
+                <td>납기</td>
+                <td class="highlight-col">7일 내</td>
+                <td>불확실</td>
+                <td>2~4주+</td>
+              </tr>
+              <tr>
+                <td>모델 최적 매칭</td>
+                <td class="highlight-col"><i class="fas fa-check td-check"></i></td>
+                <td><i class="fas fa-times td-cross"></i></td>
+                <td>보통</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="feat-list">
-          <div class="feat-item">
-            <div class="feat-num">01</div>
-            <div class="feat-content">
-              <h3>무제한 사용권 보장</h3>
-              <p>
-                한 번 만든 영상, 2차 활용 비용 없이 광고 소재로 영구 활용하세요. "이거 계속 써도 되나요?" 걱정을
-                없애드립니다.
-              </p>
+  <!-- ===== SAMPLES ===== -->
+  <section class="samples-section" id="samples">
+    <div class="container">
+      <div class="section-label">제작 예시</div>
+      <h2 class="section-title">실제 이런 영상이 <span class="highlight">광고 소재</span>로 쌓입니다</h2>
+      <p class="section-sub">업종별 리뷰 영상 예시 — 제품에 맞는 모델을 매칭해 제작합니다</p>
+
+      <div class="samples-filter">
+        <button class="filter-btn active" data-filter="all">전체</button>
+        <button class="filter-btn" data-filter="sports">스포츠/라이프</button>
+        <button class="filter-btn" data-filter="it">IT/학습기기</button>
+        <button class="filter-btn" data-filter="food">식품/식당</button>
+        <button class="filter-btn" data-filter="beauty">뷰티/생활</button>
+      </div>
+
+      <div class="samples-grid" id="samplesGrid">
+
+        <!-- Sports -->
+        <div class="sample-card" data-category="sports">
+          <div class="sample-thumb">
+            <div class="sample-play-overlay">
+              <i class="fas fa-play-circle"></i>
+            </div>
+            <img src="images/sample-sports.jpg" alt="자전거 라이더 리뷰 예시" class="sample-img" />
+            <div class="sample-badge">라이더 모델 매칭</div>
+          </div>
+          <div class="sample-info">
+            <div class="sample-tag">🚲 스포츠/라이프</div>
+            <p class="sample-quote">"이거 주행감 진짜 대박이에요! 오르막도 거뜬해요"</p>
+            <div class="sample-meta">
+              <span><i class="fas fa-clock"></i> 18초</span>
+              <span><i class="fas fa-eye"></i> 훅형</span>
             </div>
           </div>
-          <div class="feat-item">
-            <div class="feat-num">02</div>
-            <div class="feat-content">
-              <h3>초고속 편집</h3>
-              <p>
-                일반인이 찍은 날것의 영상을 AI가 훅(Hooking), 자막, 템포를 조절해 '매출형 숏폼'으로 빠르게 변환합니다.
-              </p>
+        </div>
+
+        <!-- IT -->
+        <div class="sample-card" data-category="it">
+          <div class="sample-thumb">
+            <div class="sample-play-overlay">
+              <i class="fas fa-play-circle"></i>
+            </div>
+            <img src="images/sample-ipad.jpg" alt="아이패드 용품 리뷰 예시" class="sample-img" />
+            <div class="sample-badge">대학생 모델 매칭</div>
+          </div>
+          <div class="sample-info">
+            <div class="sample-tag">📱 IT/학습기기</div>
+            <p class="sample-quote">"서각서각 펜촉 소리 진짜야… 집중력이 달라요"</p>
+            <div class="sample-meta">
+              <span><i class="fas fa-clock"></i> 22초</span>
+              <span><i class="fas fa-eye"></i> ASMR형</span>
             </div>
           </div>
-          <div class="feat-item">
-            <div class="feat-num">03</div>
-            <div class="feat-content">
-              <h3>검증된 일반인 크리에이터</h3>
-              <p>
-                카메라 앞에서 자연스러운 '진짜 사람'을 매칭해드립니다. 대본 읽는 연기자가 아닌, 찐 리액션을 담습니다.
-              </p>
+        </div>
+
+        <!-- Food -->
+        <div class="sample-card" data-category="food">
+          <div class="sample-thumb">
+            <div class="sample-play-overlay">
+              <i class="fas fa-play-circle"></i>
+            </div>
+            <img src="images/sample-food.jpg" alt="식품 먹방 리뷰 예시" class="sample-img" />
+            <div class="sample-badge">먹방 모델 매칭</div>
+          </div>
+          <div class="sample-info">
+            <div class="sample-tag">🍖 식품/식당</div>
+            <p class="sample-quote">"와.. 육즙 미쳤다! 이거 어디서 샀어요?"</p>
+            <div class="sample-meta">
+              <span><i class="fas fa-clock"></i> 25초</span>
+              <span><i class="fas fa-eye"></i> 먹방형</span>
             </div>
           </div>
         </div>
+
+        <!-- Beauty -->
+        <div class="sample-card" data-category="beauty">
+          <div class="sample-thumb">
+            <div class="sample-play-overlay">
+              <i class="fas fa-play-circle"></i>
+            </div>
+            <img src="images/sample-beauty.jpg" alt="뷰티 스킨케어 리뷰 예시" class="sample-img" />
+            <div class="sample-badge">라이프스타일 매칭</div>
+          </div>
+          <div class="sample-info">
+            <div class="sample-tag">✨ 뷰티/생활</div>
+            <p class="sample-quote">"피부에 흡수가 진짜 빨라요! 끈적임 없어서 최고"</p>
+            <div class="sample-meta">
+              <span><i class="fas fa-clock"></i> 20초</span>
+              <span><i class="fas fa-eye"></i> 비교형</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Offline -->
+        <div class="sample-card" data-category="sports">
+          <div class="sample-thumb">
+            <div class="sample-play-overlay">
+              <i class="fas fa-play-circle"></i>
+            </div>
+            <img src="images/sample-offline.jpg" alt="오프라인 매장 방문 리뷰 예시" class="sample-img" />
+            <div class="sample-badge">방문 모델 매칭</div>
+          </div>
+          <div class="sample-info">
+            <div class="sample-tag">🏪 오프라인 서비스</div>
+            <p class="sample-quote">"친구한테 진짜 추천하고 싶은 곳 발견했다!"</p>
+            <div class="sample-meta">
+              <span><i class="fas fa-clock"></i> 30초</span>
+              <span><i class="fas fa-eye"></i> 방문후기형</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- IT 2 -->
+        <div class="sample-card" data-category="it">
+          <div class="sample-thumb">
+            <div class="sample-play-overlay">
+              <i class="fas fa-play-circle"></i>
+            </div>
+            <img src="images/sample-it2.jpg" alt="노트북 악세서리 리뷰 예시" class="sample-img" />
+            <div class="sample-badge">취준생 모델 매칭</div>
+          </div>
+          <div class="sample-info">
+            <div class="sample-tag">💻 IT/학습기기</div>
+            <p class="sample-quote">"카페 가서 이거 꽂으니까 진짜 집중됨ㅋㅋ"</p>
+            <div class="sample-meta">
+              <span><i class="fas fa-clock"></i> 15초</span>
+              <span><i class="fas fa-eye"></i> 문제-해결형</span>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </section>
 
-    <!-- Process Section -->
-    <section id="process">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Process</span>
-          <h2 class="section-title">복잡한 과정은 뺐습니다.<br>핵심 정보만 주세요.</h2>
-        </div>
-
-        <div class="process-steps">
-          <div class="step">
-            <div class="step-name">Step 01</div>
-            <div class="step-title">간편 접수 (구글폼)</div>
-            <div class="step-desc">업종, 상품 특징, 원하는 톤, 레퍼런스 링크만 입력해주세요.</div>
-          </div>
-          <div class="step">
-            <div class="step-name">Step 02</div>
-            <div class="step-title">크리에이터 매칭 &amp; 가이드</div>
-            <div class="step-desc">가장 적합한 일반인 크리에이터를 선정하고 촬영 가이드를 발송합니다.</div>
-          </div>
-          <div class="step">
-            <div class="step-name">Step 03</div>
-            <div class="step-title">원본 수령 &amp; 편집</div>
-            <div class="step-desc">도착한 원본 영상을 숏폼 문법에 맞게 편집하고 자막을 입힙니다.</div>
-          </div>
-          <div class="step">
-            <div class="step-name">Step 04</div>
-            <div class="step-title">최종 납품</div>
-            <div class="step-desc">SNS 업로드 및 광고 집행이 가능한 파일 형태로 전달드립니다.</div>
-          </div>
-        </div>
       </div>
-    </section>
 
-    <!-- CTA Choice Section (Replaces Pricing) -->
-    <section id="cta-choice">
-      <div class="container">
-        <div class="section-header" style="text-align: center; margin-bottom: 32px">
-          <span class="section-tag" style="background: rgba(255, 255, 255, 0.1); color: white; border-color: rgba(255, 255, 255, 0.2)">Start Now</span>
-          <h2 class="section-title">어떤 서비스를 원하시나요?</h2>
-          <p class="section-desc" style="margin: 0 auto">사장님은 매출을 늘리고, 크리에이터는 수익을 만듭니다.</p>
-        </div>
-
-        <div class="cta-choice-container">
-          <!-- Left Button: Client -->
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScUmZcJZhCeZBgffTGgI3rmO5zaN1W32PE9qiKROz8OehsSfQ/viewform?usp=dialog" target="_blank" class="choice-card choice-client">
-            <div class="icon-box">📢</div>
-            <h3 class="choice-title">영상 의뢰</h3>
-            <p class="choice-desc">
-              1-2 분 영상<br>
-              <strong style="color: #818cf8; font-size: 18px">15만원 부터</strong>
-            </p>
-            <div class="choice-btn-fake">신청서 작성하기 →</div>
-          </a>
-
-          <!-- Right Button: Creator -->
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-fpfJiS28MWoL7WD2UwCePr5Ziq4tHabbpIt4VNJw7_Xt1A/viewform?usp=dialog" target="_blank" class="choice-card choice-creator">
-            <div class="icon-box">💰</div>
-            <h3 class="choice-title">영상 찍고 수익 창출</h3>
-            <p class="choice-desc">
-              내 스마트폰으로 촬영하고<br>
-              <strong style="color: #4ade80; font-size: 18px">현금 정산 받기</strong>
-            </p>
-            <div class="choice-btn-fake">크리에이터 지원하기 →</div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">자주 묻는 질문</h2>
-        </div>
-
-        <div class="faq-list">
-          <div class="faq-item">
-            <details>
-              <summary>직접 DM으로 섭외하는 것보다 왜 안전한가요?</summary>
-              <p>
-                개인 간 거래는 먹튀, 연락 두절, 과도한 수정 요구 등 분쟁 소지가 많습니다. 돈되는쇼츠는 플랫폼이 중간에서
-                제작 범위와 납기, 정산, 저작권을 보증하여 양쪽 모두 안전하게 거래할 수 있습니다.
-              </p>
-            </details>
+      <!-- ===== 실제 리뷰 영상 4개 ===== -->
+      <div class="video-row-wrap">
+        <div class="video-row-label">실제 리뷰 영상 예시</div>
+        <div class="video-row">
+          <div class="video-item">
+            <video controls playsinline webkit-playsinline muted loop preload="metadata">
+              <source src="https://billo.app/wp-content/uploads/2025/04/8-Health_Wellness_169096_Andrew_Michigan_4.94.mp4" type="video/mp4" />
+            </video>
+            <div class="video-caption"><i class="fas fa-star"></i> 4.94 ★ Andrew</div>
           </div>
-          <div class="faq-item">
-            <details>
-              <summary>우리 가게는 영상 찍을 게 별로 없는데 괜찮나요?</summary>
-              <p>
-                오히려 좋습니다. 화려한 연출보다 '솔직한 후기' 느낌이 UGC의 핵심입니다. 제품이 택배로 도착하는 장면,
-                매장 문을 여는 장면, 한 입 먹고 짓는 표정 등 사소한 순간이 훌륭한 소재가 됩니다.
-              </p>
-            </details>
+          <div class="video-item">
+            <video controls playsinline webkit-playsinline muted loop preload="metadata">
+              <source src="https://billo.app/wp-content/uploads/2025/04/7-Health_Wellness_326618_Natalie_California_4.7.mp4" type="video/mp4" />
+            </video>
+            <div class="video-caption"><i class="fas fa-star"></i> 4.7 ★ Natalie</div>
           </div>
-          <div class="faq-item">
-            <details>
-              <summary>사장님이 직접 출연해야 하나요?</summary>
-              <p>
-                전혀 아닙니다. 100% 크리에이터가 출연하거나, 얼굴 없이 손과 목소리만 나오는 리뷰 형식도 가능합니다.
-                원하시는 연출 방향을 구글폼에 적어주시면 됩니다.
-              </p>
-            </details>
+          <div class="video-item">
+            <video controls playsinline webkit-playsinline muted loop preload="metadata">
+              <source src="https://billo.app/wp-content/uploads/2025/04/6-Health_Wellness_260376_Taylor_Florida_4.9.mp4" type="video/mp4" />
+            </video>
+            <div class="video-caption"><i class="fas fa-star"></i> 4.9 ★ Taylor</div>
           </div>
-          <div class="faq-item">
-            <details>
-              <summary>제작된 영상은 어디에 쓸 수 있나요?</summary>
-              <p>
-                인스타그램 릴스, 유튜브 쇼츠, 틱톡 업로드는 물론 메타/구글 광고 소재로도 제한 없이 사용 가능합니다. 2차
-                가공(컷 편집 등)도 자유롭게 하실 수 있습니다.
-              </p>
-            </details>
+          <div class="video-item">
+            <video controls playsinline webkit-playsinline muted loop preload="metadata">
+              <source src="https://billo.app/wp-content/uploads/2025/04/5-Health_Wellness_111465_Alexis_California_4.93.mp4" type="video/mp4" />
+            </video>
+            <div class="video-caption"><i class="fas fa-star"></i> 4.93 ★ Alexis</div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Final CTA (Replaces Apply Section) -->
-    <section style="
-        background: linear-gradient(180deg, rgba(79, 70, 229, 0.1), transparent);
-        padding: 100px 0;
-        text-align: center;
-      ">
-      <div class="container">
-        <h2 style="font-size: 36px; margin-bottom: 24px">지금 필요한 건 "더 큰 예산"이 아닙니다</h2>
-        <p style="
-            font-size: 18px;
-            color: var(--muted);
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-          ">
-          매일매일 광고 소재로 쓸 수 있는 "가성비 영상 자산"을 확보하세요.<br>
-          돈되는쇼츠가 가장 빠르고 안전한 파트너가 되어드리겠습니다.
-        </p>
-        <a href="#cta-choice" class="btn btn-primary" style="padding: 16px 32px; font-size: 18px">
-          지금 바로 시작하기
+      <div class="samples-cta-area">
+        <p class="samples-note">※ 위 예시는 제작 형태 참고용입니다. 실제 영상은 납품 후 별도 포트폴리오로 공유드립니다.</p>
+        <a href="https://open.kakao.com/o/srEOdDai" target="_blank" class="btn btn-primary">
+          <i class="fas fa-comment-dots"></i> 내 업종 예시 상담하기
         </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="logo" style="justify-content: center; margin-bottom: 24px; color: white">돈되는쇼츠</div>
-        <div class="footer-links">
-          <a href="#">이용약관</a>
-          <a href="#">개인정보처리방침</a>
-          <a href="#faq">고객센터</a>
+  <!-- ===== DIFFERENCE ===== -->
+  <section class="difference-section" id="difference">
+    <div class="container">
+      <div class="section-label">헬로미디어가 다른 3가지</div>
+      <h2 class="section-title">왜 <span class="highlight">헬로미디어</span>인가요?</h2>
+      <div class="diff-grid">
+        <div class="diff-card">
+          <div class="diff-num">01</div>
+          <div class="diff-icon"><i class="fas fa-users"></i></div>
+          <h3>최적의 모델을 찾습니다</h3>
+          <p>
+            사장님이 직접 찍는 게 아닙니다. <br />
+            자전거면 <strong>실제 라이더</strong>, 아이패드 용품이면 <strong>대학생</strong>, 식품이면 <strong>진짜 먹방러</strong>… 제품 성격에 딱 맞는 '진짜 모델'을 매칭합니다.<br />
+            <span class="diff-sub">(AI 아님, 특정 1명 아님 — 제품마다 새로 매칭)</span>
+          </p>
         </div>
-        <p>© 2024 돈되는쇼츠. All rights reserved.</p>
-        <p style="margin-top: 8px; font-size: 12px; color: var(--muted2)">AI 기반 UGC 리뷰 영상 제작 및 매칭 플랫폼</p>
+        <div class="diff-card">
+          <div class="diff-num">02</div>
+          <div class="diff-icon"><i class="fas fa-box-open"></i></div>
+          <h3>제품만 보내세요 (풀패키지)</h3>
+          <p>
+            모델 섭외, 제품 전달, 촬영 가이드, 전문 편집, 납품까지…<br />
+            이 복잡하고 귀찮은 일을 <strong>사장님이 하실 필요 없습니다</strong>.<br />
+            처음부터 끝까지 헬로미디어가 풀패키지로 대행합니다.
+          </p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-num">03</div>
+          <div class="diff-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>광고에 즉시 사용 가능한 자산</h3>
+          <p>
+            어렵게 받은 리뷰, 저작권 때문에 불안하셨죠?<br />
+            헬로미디어가 만든 영상은 <strong>초상권·사용권 계약 완비</strong>.<br />
+            인스타, 유튜브, 메타광고, 틱톡에 <strong>평생 무제한 활용</strong> 가능합니다.
+          </p>
+        </div>
       </div>
-    </footer>
-  
-<script>
-  let currentPos = 0;
-  function moveShorts(dir) {
-    const track = document.getElementById('shortsTrack');
-    const itemWidth = 260; // 카드 너비(240) + 간격(20)
-    const maxScroll = track.scrollWidth - track.parentElement.offsetWidth;
+    </div>
+  </section>
 
-    currentPos += (dir * itemWidth);
+  <!-- ===== PROCESS ===== -->
+  <section class="process-section" id="process">
+    <div class="container">
+      <div class="section-label">작업 프로세스</div>
+      <h2 class="section-title">진행은 이렇게 됩니다 <span class="highlight">(진짜로 간단)</span></h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <div class="step-icon"><i class="fas fa-comments"></i></div>
+          <h3>채팅 상담</h3>
+          <p>제품 링크나 사진만 보내주세요. 업종·타겟·톤 확인 후 견적 안내드립니다.</p>
+          <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <div class="step-icon"><i class="fas fa-user-check"></i></div>
+          <h3>모델 매칭</h3>
+          <p>제품에 가장 어울리는 모델을 섭외하고 촬영 가이드를 발송합니다.</p>
+          <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <div class="step-icon"><i class="fas fa-video"></i></div>
+          <h3>촬영 & 편집</h3>
+          <p>원본 수령 후 훅·자막·BGM·템포까지 숏폼 문법에 맞게 전문 편집합니다.</p>
+          <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <div class="step-icon"><i class="fas fa-paper-plane"></i></div>
+          <h3>최종 납품</h3>
+          <p>광고 집행 가능한 파일 + 변형 컷 3~5개를 전달드립니다. (결제 후 7일 내)</p>
+        </div>
+      </div>
+      <div class="process-cta">
+        <a href="https://open.kakao.com/o/srEOdDai" target="_blank" class="btn btn-kakao">
+          <i class="fas fa-comment-dots"></i> 지금 제품 링크 보내기
+        </a>
+      </div>
+    </div>
+  </section>
 
-    if (currentPos < 0) currentPos = 0;
-    if (currentPos > maxScroll) currentPos = maxScroll;
+  <!-- ===== TARGET ===== -->
+  <section class="target-section" id="target">
+    <div class="container">
+      <div class="section-label">이런 분께 딱입니다</div>
+      <h2 class="section-title">지금 바로 시작하세요!</h2>
+      <div class="target-grid">
+        <div class="target-item">
+          <span class="target-emoji">🚲</span>
+          <div>
+            <strong>자전거·아웃도어 사장님</strong>
+            <p>"이거 주행감 대박이에요!" — 라이더 모델 매칭</p>
+          </div>
+        </div>
+        <div class="target-item">
+          <span class="target-emoji">📱</span>
+          <div>
+            <strong>IT·학습기기 사장님</strong>
+            <p>"서각서각 펜촉 소리 진짜야!" — 대학생·취준생 매칭</p>
+          </div>
+        </div>
+        <div class="target-item">
+          <span class="target-emoji">🍖</span>
+          <div>
+            <strong>식품·식당 사장님</strong>
+            <p>"와.. 육즙 미쳤다!" — 먹방 모델 매칭</p>
+          </div>
+        </div>
+        <div class="target-item">
+          <span class="target-emoji">🏪</span>
+          <div>
+            <strong>오프라인 서비스 사장님</strong>
+            <p>매장 직접 방문해줄 모델을 찾아드립니다</p>
+          </div>
+        </div>
+        <div class="target-item">
+          <span class="target-emoji">✨</span>
+          <div>
+            <strong>뷰티·생활용품 사장님</strong>
+            <p>사용법·효과를 자연스럽게 보여주는 리뷰 제작</p>
+          </div>
+        </div>
+        <div class="target-item">
+          <span class="target-emoji">🛍️</span>
+          <div>
+            <strong>온라인 셀러·스마트스토어</strong>
+            <p>상세페이지+광고에 바로 붙일 소재 확보</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    track.style.transform = `translateX(-${currentPos}px)`;
-  }
-</script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div style="text-align: center; color: #666; font-size: 14px; margin-top: 50px; padding-bottom: 20px;">
-    <span>총 방문자 수: <span id="busuanzi_value_site_pv"></span>명</span> | 
-    <span>오늘 방문자 수: <span id="busuanzi_value_site_uv"></span>명</span>
-</div>
-</body></html>
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-label">자주 묻는 질문</div>
+      <h2 class="section-title">궁금하신 점이 있으시죠?</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>15만원 안에 정확히 무엇이 포함되나요?</span>
+            <i class="fas fa-chevron-down faq-arrow"></i>
+          </button>
+          <div class="faq-a">
+            <p>메인 리뷰 영상 1편(15~30초) + 같은 소재로 편집한 광고용 변형 컷 3~5개가 포함됩니다. 모델 섭외, 촬영 가이드 발송, 전문 편집(훅·자막·BGM·템포), 수정 1회, 광고 사용권(무제한)까지 모두 포함입니다. 제품 배송 비용은 사장님 부담입니다.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>사장님이 직접 출연해야 하나요?</span>
+            <i class="fas fa-chevron-down faq-arrow"></i>
+          </button>
+          <div class="faq-a">
+            <p>전혀 아닙니다. 100% 헬로미디어가 섭외한 모델이 출연합니다. 얼굴 없이 손과 제품만 나오는 형태, 나레이션 위주, 먹방 등 원하시는 스타일을 상담 시 말씀해 주시면 맞춰드립니다.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>광고 사용권 범위가 정확히 어떻게 되나요?</span>
+            <i class="fas fa-chevron-down faq-arrow"></i>
+          </button>
+          <div class="faq-a">
+            <p>납품된 영상은 인스타그램 릴스, 유튜브 쇼츠, 틱톡, 메타(Facebook/Instagram) 광고, 구글 광고 소재로 무제한 활용 가능합니다. 2차 가공(컷 편집 등)도 자유롭게 하실 수 있습니다. 모델과의 초상권·사용권 계약서를 함께 제공드려 안심하고 사용하실 수 있습니다.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>영상 제작 기간이 얼마나 걸리나요?</span>
+            <i class="fas fa-chevron-down faq-arrow"></i>
+          </button>
+          <div class="faq-a">
+            <p>결제 및 제품 발송 완료 후 평균 5~7일, 최대 10일 내 납품을 목표로 합니다. 모델 스케줄·배송 상황에 따라 다소 달라질 수 있으며, 진행 상황은 카카오톡으로 실시간 업데이트 드립니다.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>오프라인 매장도 가능한가요?</span>
+            <i class="fas fa-chevron-down faq-arrow"></i>
+          </button>
+          <div class="faq-a">
+            <p>가능합니다. 매장 위치와 콘셉트를 공유해주시면, 직접 방문해줄 모델을 매칭해드립니다. 매장 방문 리뷰, 서비스 체험 후기 등 다양한 형태로 제작 가능합니다. 지역에 따라 이동 비용이 추가될 수 있으니 상담 시 문의해 주세요.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>수정 횟수가 1회인데, 마음에 안 들면 어떻게 하나요?</span>
+            <i class="fas fa-chevron-down faq-arrow"></i>
+          </button>
+          <div class="faq-a">
+            <p>처음 상담 시 원하시는 느낌, 레퍼런스 영상, 강조하고 싶은 포인트를 최대한 상세히 공유해주시면 수정 없이도 만족스러운 결과물이 나올 수 있도록 합니다. 수정 1회는 자막 수정, 자르기/컷 조정, BGM 변경 등을 포함합니다. 추가 수정은 건당 별도 협의 후 진행합니다.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>런칭 이벤트 1+1은 언제까지인가요?</span>
+            <i class="fas fa-chevron-down faq-arrow"></i>
+          </button>
+          <div class="faq-a">
+            <p>선착순 3팀 한정 이벤트로, 별도 종료 공지 없이 마감됩니다. 고민은 매출만 늦출 뿐입니다. 지금 바로 카카오톡으로 문의해 이벤트 가능 여부를 확인해 보세요!</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="final-cta-section" id="contact">
+    <div class="container">
+      <div class="final-cta-inner">
+        <div class="final-cta-badge"><i class="fas fa-fire"></i> 런칭 이벤트 진행 중</div>
+        <h2 class="final-cta-title">
+          지금 제품 링크만 보내주세요<br />
+          <span class="highlight">나머지는 헬로미디어가 합니다</span>
+        </h2>
+        <p class="final-cta-sub">
+          고민은 매출만 늦출 뿐입니다.<br />
+          15만원으로 광고 소재를 확보하고, 바로 집행해보세요.
+        </p>
+        <div class="final-cta-buttons">
+          <a href="https://open.kakao.com/o/srEOdDai" target="_blank" class="btn btn-kakao btn-lg">
+            <i class="fas fa-comment-dots"></i> 카카오톡으로 바로 문의
+          </a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScUmZcJZhCeZBgffTGgI3rmO5zaN1W32PE9qiKROz8OehsSfQ/viewform?usp=sharing&ouid=110619884620167652365" target="_blank" class="btn btn-primary btn-lg">
+            <i class="fas fa-file-alt"></i> 구글폼으로 신청하기
+          </a>
+          <a href="https://kmong.com/gig/746267" target="_blank" class="btn btn-outline-white btn-lg">
+            <i class="fas fa-store"></i> 크몽에서 바로 주문
+          </a>
+        </div>
+        <p class="final-microcopy">24시간 내 회신 · 무료 상담 · 선착순 3팀 1+1 이벤트</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="헬로미디어" class="footer-logo-img" />
+        <span>헬로미디어</span>
+      </div>
+      <div class="footer-links">
+        <a href="#samples">제작예시</a>
+        <a href="#package">패키지</a>
+        <a href="#difference">차별점</a>
+        <a href="#process">프로세스</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-copy">
+        © 2025 헬로미디어. All rights reserved.<br />
+        <span>문의: <a href="https://open.kakao.com/o/srEOdDai" target="_blank">카카오 오픈채팅</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING CTA (Mobile) ===== -->
+  <div class="floating-cta" id="floatingCta">
+    <a href="https://open.kakao.com/o/srEOdDai" target="_blank" class="float-btn float-kakao">
+      <i class="fas fa-comment-dots"></i>
+      <span>카카오톡 문의</span>
+    </a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScUmZcJZhCeZBgffTGgI3rmO5zaN1W32PE9qiKROz8OehsSfQ/viewform?usp=sharing&ouid=110619884620167652365" target="_blank" class="float-btn float-form">
+      <i class="fas fa-file-alt"></i>
+      <span>신청하기</span>
+    </a>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
